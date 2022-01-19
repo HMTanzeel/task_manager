@@ -1,0 +1,10 @@
+<% if current_user %>
+  Logged In as: <%= current_user.email %>
+  <%= link_to 'Log Out', session_path(:user_id), data: {turbo_method: :delete,
+                                                        turbo_confirm: "Are you sure?"} %>
+<% else %>
+  <%= link_to 'Sign Up', signup_path %> or
+  <%= link_to 'Log In', login_path %>
+<% end %>
+<p><%= notice %></p>
+<p>Lorem ipsum</p>
