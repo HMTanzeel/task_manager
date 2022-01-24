@@ -1,0 +1,12 @@
+<p>
+  <strong>Date / Time</strong>
+  <%= message.created_at %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= message.body %>
+</p>
+
+<%= link_to "Destroy message", [message.user, message], data: { turbo_method: :delete,
+              turbo_confirm: "Are you sure?"} %>

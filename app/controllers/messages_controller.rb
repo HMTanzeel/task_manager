@@ -2,14 +2,14 @@ class MessagesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @message = @user.messages.create(message_params)
-    redirect_to user_path(@user)
+    redirect_to root_path
   end
 
   def destroy
     @user = User.find(params[:user_id])
-    @comment = @user.comments.find(params[:id])
+    @comment = @user.messages.find(params[:id])
     @comment.destroy
-    redirect_to user_path(@user)
+    redirect_to root_path
   end
 
   private

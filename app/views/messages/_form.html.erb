@@ -1,4 +1,4 @@
-  <%= form_with model: [ @user, @user.messages.build ] do |form| %>
+  <%= form_with model: [ current_user, current_user.messages.build ] do |form| %>
     <p>
       <%= form.label :body %><br>
       <%= form.text_area :body %>
