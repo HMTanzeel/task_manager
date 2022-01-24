@@ -6,17 +6,8 @@
   <%= render 'messages/form' %>
 
   <h2>Notes</h2>
-<% @user.messages.each do |message| %>
-  <p>
-    <strong>Date / Time</strong>
-    <%= message.created_at %>
-  </p>
-
-  <p>
-    <strong>Note:</strong>
-    <%= message.body %>
-  </p>
-
+  <%= render @user.messages %>
+  
   <%= link_to "Destroy message", [message.article, message], data: { turbo_method: :delete,
               turbo_confirm: "Are you sure?"} %>
 <% end %>
