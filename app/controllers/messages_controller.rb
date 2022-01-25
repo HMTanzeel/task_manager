@@ -7,8 +7,8 @@ class MessagesController < ApplicationController
 
   def destroy
     @user = User.find(params[:user_id])
-    @comment = @user.messages.find(params[:id])
-    @comment.destroy
+    @message = @user.messages.find(params[:id])
+    @message.destroy
     redirect_to root_path
   end
 
