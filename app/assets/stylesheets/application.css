@@ -1,3 +1,67 @@
+body {
+  background-color: gray;
+}
+
+h1, h2 {
+  color: white;
+  padding-left: 20px;
+}
+
+p {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 0;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+button {
+  border-radius: 80px;
+  margin: 20px;
+  background-color: black;
+  border: 0;
+  padding: 5px;
+}
+
+.new {
+  padding-left: 20px;
+}
+
 .notice {
   color:green;
+}
+
+.startbg {
+  background-color: skyblue;
+}
+
+#start {
+  padding: 10px 0px 10px 10px;
+  text-align: center;
+}
+
+.signbg {
+  background-color: pink;
+}
+
+#menu {
+  padding: 20px 0px;
+  text-align: center;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+}
+
+#menu ul li {
+  display: inline-block;
+}
+
+#content {
+  text-align: center;
+}
+
+.whitbg {
+  background-color: white;
 }

@@ -1,25 +1,23 @@
-<<<<<<< HEAD
 <p class="notice"><%= notice %></p>
-=======
-<p class="noticed"><%= notice %></p>
->>>>>>> e634cfdcaac1d22b8f7b1ca0cdab839bdb79df01
 
 <p><%= alert %></p>
 <h1>LogIn</h1>
 <%= form_tag sessions_path, method: :post do |form| %>
   
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
+  <div class='row flex-column new'>
+    <div class='col'>
+      <p><%= label_tag :email %></p>
+      <%= text_field_tag :email %>
+    </div>
 
-  <div>
-    <%= label_tag :password %>
-    <%= text_field_tag :password %>
-  </div>
+    <div class='col'>
+      <p><%= label_tag :password %></p>
+      <%= text_field_tag :password %>
+    </div>
 
+    <div class='col'>
+      <button><%= submit_tag 'Login' %></button>
+    </div>
   <div>
-    <%= submit_tag 'Login' %>
-  </div>
 
 <% end %>
