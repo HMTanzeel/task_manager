@@ -1,4 +1,142 @@
+body {
+  background-color: white;
+}
+
+h1, h2 {
+  color: white;
+  padding-left: 20px;
+}
+
+h3 {
+  background-color: #0d0d0d;
+  color: white;
+  text-align: center;
+  padding: 20px 5px;
+  font-size: 40px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.para-class, p {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 0;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+.inputmail {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 50%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.inputmail:hover {
+  border-bottom: 3px solid black;
+}
+
+.box {
+  background-color: #ece4e4;
+  border: none;
+  color: #0d0d0d;
+  padding: 10px 50px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px;
+  width: 50%;
+  height: 150px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.box:hover {
+  box-shadow:0px 0px 0px -1px rgba(0, 0, 0, 0.2), 0px 0px 10px 0px rgba(0, 0, 0, 0.19);
+  z-index:1;
+}
+
+button, .btn {
+  border-radius: 80px;
+  margin: 20px;
+  background-color: black;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 25px;
+  color: white;
+  font-size: 20px;
+  
+}
+.btn:hover {
+  color: blue;
+  background-color: white;
+  font-size: 19px;
+  text-align: center;
+}
+
+.msg {
+  border-radius: 80px;
+  margin: 20px;
+  background-color: gray;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 15px;
+  margin-bottom: 0px;
+  color: white;
+  font-size: 12px;
+}
+
+.msg:hover {
+  color: blue;
+  background-color: skyblue;
+  font-size: 10px;
+  text-align: center;
+}
+
+.new {
+  padding-left: 20px;
+}
 
 .notice {
   color:green;
+}
+
+#start {
+  padding: 10px 0px 10px 10px;
+  text-align: center;
+}
+
+.signbg {
+  background-color: pink;
+}
+
+#menu {
+  padding: 20px 0px;
+  text-align: center;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+}
+
+#menu ul li {
+  display: inline-block;
+}
+
+#content {
+  text-align: center;
+}
+
+.whitbg {
+  background-color: white;
 }

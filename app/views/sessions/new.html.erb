@@ -3,19 +3,22 @@
 <p><%= alert %></p>
 <h1>LogIn</h1>
 <%= form_tag sessions_path, method: :post do |form| %>
-  
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
+  <div class='container'>
+    <div class='row flex-column'>
+      <div class='col'>
+        <p><%= label_tag :email, nil, class: "para-class"%></p>
+        <%= text_field_tag :email, nil, class: "inputmail" %>
+      </div>
 
-  <div>
-    <%= label_tag :password %>
-    <%= text_field_tag :password %>
-  </div>
+      <div class='col'>
+        <p><%= label_tag :password, nil, class: "para-class" %></p>
+        <%= text_field_tag :password, nil, class: "inputmail" %>
+      </div>
 
-  <div>
-    <%= submit_tag 'Login' %>
+      <div class='col'>
+        <%= submit_tag 'Login', class: "btn" %>
+      </div>
+    <div>
   </div>
 
 <% end %>
