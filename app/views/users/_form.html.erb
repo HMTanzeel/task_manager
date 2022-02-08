@@ -13,37 +13,37 @@
   <div class = 'container'>
     <div class='row flex-column'>
       <div class='col'>
-        <p><%= form.label :name, style: "display: block" %></p>
-        <%= form.text_field :name %>
+        <p><%= form.label :name, nil, class: "para-class" %></p>
+        <%= form.text_field :name, class: "inputmail" %>
       </div>
 
       <div class='col'>
-        <p><%= form.label :mobile, style: "display: block" %></p>
-        <%= form.number_field :mobile %>
+        <p><%= form.label :mobile, nil, class: "para-class" %></p>
+        <%= form.number_field :mobile, class: "inputmail" %>
       </div>
 
       <div class='col'>
-        <p><%= form.label :email, style: "display: block" %></p>
-        <%= form.text_field :email %>
+        <p><%= form.label :email, nil, class: "para-class" %></p>
+        <%= form.text_field :email, class: "inputmail" %>
       </div>
 
       <div class='col'>
-        <p><%= form.label :password, style: "display: block" %></p>
-        <%= form.password_field :password %>
+        <p><%= form.label :password, nil, class: "para-class" %></p>
+        <%= form.password_field :password, class: "inputmail" %>
       </div>
 
       <div class='col'>
-        <p><%= form.label :password_confirmation, style: "display: block" %></p>
-        <%= form.password_field :password_confirmation %>
+        <p><%= form.label :password_confirmation, nil, class: "para-class" %></p>
+        <%= form.password_field :password_confirmation, class: "inputmail" %>
       </div>
 
       <div>
-        <p><%= form.label :address, style: "display: block" %></p>
-        <%= form.text_field :address %>
+        <p><%= form.label :address, nil, class: "para-class" %></p>
+        <%= form.text_field :address, class: "inputmail" %>
       </div>
 
       <div>
-        <button><%= form.submit %></button>
+        <%= form.submit class: "btn" %>
       </div>
     <div>
   </div>

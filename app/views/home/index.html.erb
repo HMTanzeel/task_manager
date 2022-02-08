@@ -1,15 +1,15 @@
 <% if current_user %>
-  <p> Logged In as: <%= current_user.email %> </p>
-  <button>
-    <%= link_to 'Log Out', session_path(:user_id),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  </button>
+  <div class='container'>
+    <h3> Logged In as: <%= current_user.email %> </h3>
+      <%= link_to 'Log Out', session_path(:user_id),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn  ' %>
 
-  <h2>Add a Note:</h2>
-  <%= render 'messages/form' %>
+    <h2>Add a Note:</h2>
+    <%= render 'messages/form' %>
 
-  <h2>Notes</h2>
-  <%= render current_user.messages %>
+    <h2>Notes</h2>
+    <%= render current_user.messages %>
+  </div>
 
 <% else %>
 
@@ -21,10 +21,10 @@
       </div>
     </div>
 
-    <div class = "row signbg">
+    <div class = "row">
       <div class = "col-6 m-auto p-2" id = "menu">
         
-        <ul>
+        <ul class = "signbg">
           <li><p><%= link_to 'Sign Up', new_user_path %></p></li>
           <li><p>or</p></li>
           <li><p><%= link_to 'Log In', new_session_path %></p></li>

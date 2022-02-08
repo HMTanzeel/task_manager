@@ -16,5 +16,5 @@
   </div>
 </div>
 
-<button><%= link_to "Destroy message", [message.user, message], data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?"} %></button>
+<%= link_to "Destroy message", [message.user, message], data: { turbo_method: :delete,
+              turbo_confirm: "Are you sure?"}, class:'msg' %>
