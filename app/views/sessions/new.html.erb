@@ -1,6 +1,7 @@
-<p class="notice"><%= notice %></p>
+ <% if alert %>
+          <p class='notice'><%= alert %></p>
+ <% end %>
 
-<p><%= alert %></p>
 <h1>LogIn</h1>
 <%= form_tag sessions_path, method: :post do |form| %>
   <div class='container'>
@@ -12,7 +13,7 @@
 
       <div class='col'>
         <p><%= label_tag :password, nil, class: "para-class" %></p>
-        <%= text_field_tag :password, nil, class: "inputmail" %>
+        <%= password_field :password, nil, class: "inputmail" %>
       </div>
 
       <div class='col'>
