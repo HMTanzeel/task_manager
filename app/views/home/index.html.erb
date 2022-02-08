@@ -1,16 +1,50 @@
 <% if current_user %>
-  Logged In as: <%= current_user.email %>
-  <%= link_to 'Log Out', session_path(:user_id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class='container'>
+    <h3> Logged In as: <%= current_user.email %> </h3>
+      <%= link_to 'Log Out', session_path(:user_id),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn  ' %>
 
-  <h2>Add a Note:</h2>
-  <%= render 'messages/form' %>
+    <h2>Add a Note:</h2>
+    <%= render 'messages/form' %>
 
-  <h2>Notes</h2>
-  <%= render current_user.messages %>
+    <h2>Notes</h2>
+    <%= render current_user.messages %>
+  </div>
 
 <% else %>
-  <%= link_to 'Sign Up', new_user_path %> or
-  <%= link_to 'Log In', new_session_path %>
+
+  <div class = "container">
+
+    <div class = "row startbg">
+      <div class = "col-6 m-auto p-3" id = "start">
+        <h3>Want to LOGIN or SIGNUP?</h3>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-6 m-auto p-2" id = "menu">
+        
+        <ul class = "signbg">
+          <li><p><%= link_to 'Sign Up', new_user_path %></p></li>
+          <li><p>or</p></li>
+          <li><p><%= link_to 'Log In', new_session_path %></p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class = "row whitbg">
+      <div class = "col-sm-6 m-auto p-4" id = "content">
+        <p>Like we said, people don’t enjoy filling out forms. Designers have to create forms
+           that are so easy to fill out that the user doesn’t have to do much work.
+           This leads us to Medium’s signup page. After clicking the “Get started” call to
+           action button on the homepage, a modal pops up. You see an engaging illustration for
+           visual interest. But what is striking is there are no input fields. Are we on to a
+           winner already?
+        </p>
+      </div>
+    </div>
+
+  </div>
 <% end %>
 <p><%= notice %></p>
 

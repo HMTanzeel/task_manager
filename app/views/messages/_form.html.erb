@@ -1,9 +1,19 @@
   <%= form_with model: [ current_user, current_user.messages.build ] do |form| %>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
+    <div class='container'>
+      <div class='row'>
+        <div class='column'>
+          <p>
+            <%= form.label :type_your_note %><br>
+            <%= form.text_area :body, class: 'box' %>
+          </p>
+        </div>
+    
+        <div class='column'>
+          <p>
+            <%= form.submit class: 'msg' %>
+          </p>
+        </div>
+
+      </div>
+    </div>
   <% end %>
