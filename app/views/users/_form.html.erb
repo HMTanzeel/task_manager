@@ -16,8 +16,8 @@
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-start align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src= "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
-          alt= "Sample image">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
       </div>
       <div class="col-md-10 col-lg-8 col-xl-6 offset-xl-1">
         <form>
@@ -29,44 +29,39 @@
           <div class="align-items-center">
             <!-- Name input -->
             <div class="col-md-7 form-outline mb-4">
-              <%= form.text_field :name, class: "form-control form-control-lg", type: "name",
-                placeholder: "Enter Your Name" %>
+              <%= form.text_field :name, class: "form-control form-control-lg", type: "name", placeholder: "Enter Your Name" %>
             </div>
 
             <!-- Mobile input -->
             <div class="col-md-7 form-outline mb-4">
-              <%= form.number_field :mobile, class: "form-control form-control-lg", type: "mobile",
-                placeholder: "Enter Mobile Number" %>
+              <%= form.number_field :mobile, class: "form-control form-control-lg", type: "mobile", placeholder: "Enter Mobile Number" %>
             </div>
 
             <!-- Email input -->
-            <div class=col-md-7 form-outline mb-4">
-              <%= form.text_field :email, class: "form-control form-control-lg", type: "email",
-                placeholder: "Enter a Valid Email" %>
+            <div class="col-md-7 form-outline mb-4">
+              <%= form.text_field :email, class: "form-control form-control-lg", type: "email", placeholder: "Enter a Valid Email" %>
             </div>
 
             <!-- Password input -->
             <div class="col-md-7 form-outline mb-3">
-              <%= form.password_field :password, class: "form-control form-c  ontrol-lg",
-                type: "password", placeholder: "Password" %>
+              <%= form.password_field :password, class: "form-control form-c  ontrol-lg", type: "password", placeholder: "Password" %>
             </div>
 
             <!-- Password Confirmation input -->
-            <div class=col-md-7 form-outline mb-3">
-              <%= form.password_field :password_confirmation, class: "form-control form-control-lg",
-                type: "Retype_password", placeholder: "Retype Password" %>
+            <div class="col-md-7 form-outline mb-3">
+              <%= form.password_field :password_confirmation, class: "form-control form-control-lg", type: "Retype_password", placeholder: "Retype Password" %>
             </div>
 
             <!-- Address input -->
               <div class="col-md-7 form-outline mb-3">
-                <%= form.text_field :address, class: "form-control form-control-lg",
-                  type: "Address", placeholder: "Address" %>
+                <%= form.text_field :address, class: "form-control form-control-lg", type: "Address", placeholder: "Address" %>
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
                 <%= form.submit "SignUp", class: "btn btn-primary btn-lg signup" %>
-                <span class="small fw-bold mt-2 pt-1 mb-0">Have an account?
-                  <%= link_to 'Login', new_session_path, class: "link-danger" %></span>
+                <span class="small fw-bold mt-2 pt-1 mb-0">
+                  Have an account?<%= link_to 'Login', new_session_path, class: "link-danger" %>
+                </span>
               </div>
             </div>
           </form>
