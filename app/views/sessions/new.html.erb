@@ -18,19 +18,19 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <%= text_field :email, nil, class: "form-control form-control-lg",type:"email",
-              id:"form3Example3", placeholder:"Enter a valid email address"%>
+              placeholder:"Enter a valid email address"%>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <%= text_field :email, nil, class: "form-control form-control-lg",
-              type:"password", id:"form3Example4", placeholder:"Enter password"%>
+              type:"password", placeholder:"Enter password"%>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <input class="form-check-input me-2" type="checkbox" value=""/>
               <label class="form-check-label" for="form2Example3">
                 Remember me
               </label>
@@ -51,7 +51,7 @@
   <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
-      Copyright © 2020. All rights reserved.
+      Copyright © <%= Time.now.year %>. All rights reserved.
     </div>
 </section>
 <% end %>

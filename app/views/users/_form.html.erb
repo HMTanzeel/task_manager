@@ -30,37 +30,37 @@
             <!-- Name input -->
             <div class="col-md-7 form-outline mb-4">
               <%= form.text_field :name, class: "form-control form-control-lg",type:"name",
-                id:"form4Example1", placeholder:"Enter Your Name"%>
+                placeholder:"Enter Your Name"%>
             </div>
 
             <!-- Mobile input -->
             <div class="col-md-7 form-outline mb-4">
               <%= form.number_field :mobile, class: "form-control form-control-lg",type:"mobile",
-                id:"form4Example2", placeholder:"Enter Mobile Number"%>
+                placeholder:"Enter Mobile Number"%>
             </div>
 
             <!-- Email input -->
             <div class="col-md-7 form-outline mb-4">
-              <%= form.text_field :email, class: "form-control form-control-lg",type:"email",
-                id:"form4Example3", placeholder:"Enter a Valid Email"%>
+              <%= form.text_field :email, class: "form-control form-control-lg", type:"email",
+                placeholder:"Enter a Valid Email"%>
             </div>
 
             <!-- Password input -->
             <div class="col-md-7 form-outline mb-3">
               <%= form.password_field :password, class: "form-control form-control-lg",
-                type:"password", id:"form4Example4", placeholder:"Password"%>
+                type:"password", placeholder:"Password"%>
             </div>
 
             <!-- Password Confirmation input -->
             <div class="col-md-7 form-outline mb-3">
               <%= form.password_field :password_confirmation, class: "form-control form-control-lg",
-                type:"Retype_password", id:"form4Example4", placeholder:"Retype Password"%>
+                type:"Retype_password", placeholder:"Retype Password"%>
             </div>
 
             <!-- Address input -->
               <div class="col-md-7 form-outline mb-3">
                 <%= form.text_field :address, class: "form-control form-control-lg",
-                  type:"Address", id:"form4Example4", placeholder:"Address"%>
+                  type:"Address", placeholder:"Address"%>
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
@@ -76,7 +76,7 @@
     <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
-      Copyright © 2020. All rights reserved.
+      Copyright © <%= Time.now.year %>. All rights reserved.
     </div>
   </section>
 
