@@ -10,41 +10,74 @@
       </ul>
     </div>
   <% end %>
-  <div class = 'container'>
-    <div class='row flex-column'>
-      <div class='col'>
-        <p><%= form.label :name, nil, class: "para-class" %></p>
-        <%= form.text_field :name, class: "inputmail" %>
-      </div>
 
-      <div class='col'>
-        <p><%= form.label :mobile, nil, class: "para-class" %></p>
-        <%= form.number_field :mobile, class: "inputmail" %>
+<%# ............................temp......................... %>
+  <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-start align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
       </div>
+      <div class="col-md-10 col-lg-8 col-xl-6 offset-xl-1">
+        <form>
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">SIGNUP</p>
+          </div>
 
-      <div class='col'>
-        <p><%= form.label :email, nil, class: "para-class" %></p>
-        <%= form.text_field :email, class: "inputmail" %>
-      </div>
+          
+          <div class="align-items-center">
+            <!-- Name input -->
+            <div class="col-md-7 form-outline mb-4">
+              <%= form.text_field :name, class: "form-control form-control-lg",type:"name",
+                id:"form4Example1", placeholder:"Enter Your Name"%>
+            </div>
 
-      <div class='col'>
-        <p><%= form.label :password, nil, class: "para-class" %></p>
-        <%= form.password_field :password, class: "inputmail" %>
-      </div>
+            <!-- Mobile input -->
+            <div class="col-md-7 form-outline mb-4">
+              <%= form.number_field :mobile, class: "form-control form-control-lg",type:"mobile",
+                id:"form4Example2", placeholder:"Enter Mobile Number"%>
+            </div>
 
-      <div class='col'>
-        <p><%= form.label :password_confirmation, nil, class: "para-class" %></p>
-        <%= form.password_field :password_confirmation, class: "inputmail" %>
-      </div>
+            <!-- Email input -->
+            <div class="col-md-7 form-outline mb-4">
+              <%= form.text_field :email, class: "form-control form-control-lg",type:"email",
+                id:"form4Example3", placeholder:"Enter a Valid Email"%>
+            </div>
 
-      <div>
-        <p><%= form.label :address, nil, class: "para-class" %></p>
-        <%= form.text_field :address, class: "inputmail" %>
-      </div>
+            <!-- Password input -->
+            <div class="col-md-7 form-outline mb-3">
+              <%= form.password_field :password, class: "form-control form-control-lg",
+                type:"password", id:"form4Example4", placeholder:"Password"%>
+            </div>
 
-      <div>
-        <%= form.submit "SignUp", class: "btn" %>
+            <!-- Password Confirmation input -->
+            <div class="col-md-7 form-outline mb-3">
+              <%= form.password_field :password_confirmation, class: "form-control form-control-lg",
+                type:"Retype_password", id:"form4Example4", placeholder:"Retype Password"%>
+            </div>
+
+            <!-- Address input -->
+              <div class="col-md-7 form-outline mb-3">
+                <%= form.text_field :address, class: "form-control form-control-lg",
+                  type:"Address", id:"form4Example4", placeholder:"Address"%>
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <%= form.submit "SignUp", class: "btn btn-primary btn-lg signup" %>
+                <span class="small fw-bold mt-2 pt-1 mb-0">Have an account?
+                  <%= link_to 'Login', new_session_path, class: "link-danger" %></span>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    <div>
-  </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2020. All rights reserved.
+    </div>
+  </section>
+
 <% end %>

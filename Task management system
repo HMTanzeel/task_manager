@@ -1,0 +1,17 @@
+Task management system 
+
+
+
+Task table 
+
+title
+description
+started_at
+closed_at
+user_id:
+
+
+user -> enum -> role -> admin, employee
+
+
+
