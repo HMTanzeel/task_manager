@@ -1,0 +1,61 @@
+<%= form_with model: [ current_user, current_user.tasks.build ] do |form| %>
+  <div class="container">
+    <div class="col-md-12 col-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Enter your task details.</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <th class="text-center">
+                  </th>
+                  <th>Task Name</th>
+                  <th>Discription</th>
+                  <th>Start Date</th>
+                  <th>Close Date</th>
+                  
+                </tr>
+                <tr>
+                  <td class="p-0 text-center">
+                  </td>
+                  <!-- Title input -->
+                  <td class="col-3">
+                    <div class="form-outline mb-4">
+                      <%= form.text_field 'title', class: 'form-control form-control-lg', placeholder: 'Task Title' %>
+                    </div>
+                  </td>
+                  <!-- Description input -->
+                  <td class="col-3">
+                    <div class="form-outline mb-4">
+                      <%= form.text_field 'discription', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                    </div>
+                  </td>
+                  <!-- Start Time input -->
+                  <td>
+                    <div class="form-outline mb-4">
+                      <%= form.date_field 'check_in_date', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                    </div>
+                  </td>
+                  <!-- End Time input -->
+                  <td class="col-2">
+                    <div class="form-outline mb-4">
+                      <%= form.date_field 'check_in_date', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                    </div>
+                  </td>
+                  <td>
+                    <span data-toggle="tooltip" title="" data-original-title="Edit">
+                      <%= form.submit 'Save', class: "btn btn-primary btn-action mr-1" %>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

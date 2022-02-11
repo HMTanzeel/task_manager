@@ -9,6 +9,44 @@
 
     <h2>Notes</h2>
     <%= render current_user.messages %>
+
+    <br/><br/><br/><br/><br/>
+    <h2>Enter Your Task</h2>
+    <%= render 'tasks/form' %>
+
+    <br/><br/><br/><br/><br/>
+    <h2>Your Tasks</h2>
+    <div class="container">
+      <div class="col-md-12 col-12 col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Task Details</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <th class="text-center">
+                      <div class="custom-checkbox custom-checkbox-table custom-control">
+                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
+                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                      </div>
+                    </th>
+                    <th>Task Name</th>
+                    <th>Discription</th>
+                    <th>Start Date</th>
+                    <th>Close Date</th>
+                    <th>Action</th>
+                  </tr>
+                  <%= render current_user.tasks %>
+                </tbody>
+              </table>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>  
   </div>
 
 <% else %>
