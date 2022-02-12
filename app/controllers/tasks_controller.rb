@@ -1,13 +1,11 @@
 class TasksController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
-    @task = @user.tasks.create(task_params)
+    @task = current_user.tasks.create(task_params)
     redirect_to root_path
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @task = @user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.destroy
     redirect_to root_path
   end
