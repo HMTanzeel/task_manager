@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
   def create
-    byebug
     @user = User.find(params[:user_id])
     @task = @user.tasks.create(task_params)
     redirect_to root_path
