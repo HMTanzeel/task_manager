@@ -1,19 +1,13 @@
   <%= form_with model: [ current_user, current_user.messages.build ] do |form| %>
-    <div class='container'>
-      <div class='row'>
-        <div class='column'>
-          <p>
-            <%= form.label :type_your_note %><br>
-            <%= form.text_area :body, class: 'box' %>
-          </p>
-        </div>
-
-        <div class='column'>
-          <p>
-            <%= form.submit class: 'msg' %>
-          </p>
-        </div>
+  <%# .........................template........................... %>
+    <div id="algin-form">
+      <div class="form-group">
+        <h5>Add a Note</h5>
+        <label for="message">Type</label>
+        <%= form.text_area :body, class: 'form-control', cols: "30", rows: "5" %>
       </div>
+      <div class="form-group"> 
+      <%= form.submit 'Submit', class: 'btn' %> </div>
     </div>
   <% end %>
   
