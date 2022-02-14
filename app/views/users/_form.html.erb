@@ -42,6 +42,11 @@
               <%= form.text_field :email, class: "form-control form-control-lg", type: "email", placeholder: "Enter a Valid Email" %>
             </div>
 
+            <!-- Role input -->
+            <div class="col-md-7 form-outline mb-4">
+              <%= form.select :role, User.roles.keys, class: "form-control form-control-lg", type: "email", placeholder: "As a?" %>
+            </div>
+
             <!-- Password input -->
             <div class="col-md-7 form-outline mb-3">
               <%= form.password_field :password, class: "form-control form-c  ontrol-lg", type: "password", placeholder: "Password" %>
