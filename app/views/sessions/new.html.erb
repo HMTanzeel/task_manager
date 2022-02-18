@@ -1,54 +1,80 @@
 <p class='notice'><%= alert %></p>
 
 <%= form_tag sessions_path, method: :post do |form| %>
-<section class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
-          alt="Sample image">
+
+<%# ..................................new template.................................... %>
+
+<body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
       </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
-          <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
-          </div>
 
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <%= email_field_tag 'email', nil, class: 'form-control form-control-lg', placeholder: 'Enter Your Email' %>
-          </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-5 order-md-1">
+          <h2 class="mb-3">LogIn Form</h2>
+          <form class="needs-validation" novalidate>
+            <div class="row">
 
-          <!-- Password input -->
-          <div class="form-outline mb-3">
-            <%= password_field_tag 'password', nil, class: "form-control form-control-lg", placeholder: 'Enter Your Password' %>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center">
-            <!-- Checkbox -->
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
+            <div class="mb-3">
+              <%= email_field_tag 'email', nil, class: 'form-control', placeholder: 'Enter Your Email' %>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
             </div>
-            <a href="#!" class="text-body">Forgot password?</a>
-          </div>
 
-          <div class="text-center text-lg-start mt-4 pt-2">
+            <div class="mb-3">
+              <%= password_field_tag 'password', nil, class: "form-control", placeholder: 'Enter Your Password' %>
+              <div class="invalid-feedback">
+                Please enter a valid password.
+              </div>
+            </div>
+
+            </div>
               <%= submit_tag 'Login', class: "btn btn-primary btn-lg signup" %>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
-            <%= link_to 'Register', new_user_path, class: "link-danger" %></p>
-          </div>
-
-        </form>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
+              <%= link_to 'Register', new_user_path, class: "link-danger" %></p>
+            </div>
+          </form>
+        </div>
       </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small pull-bottom">
+        <p class="mb-1">Copyright &copy; <%= Time.now.year %>. All rights reserved for Technology Scope</p>
+      </footer>
     </div>
-  </div>
-  <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-    <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
-      Copyright © 2020. All rights reserved.
-    </div>
-</section>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+              
+
+
 <% end %>

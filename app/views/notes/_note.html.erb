@@ -1,0 +1,11 @@
+<%# ................template................ %>
+
+<div class="comment mt-4 text-justify float-left">
+  <h4 class='msg_name'><%= note.user.name %></h4 class='msg_name'> <span>- <%= note.created_at %></span> <br>
+  <p><b class='msg_name'>Note: </b> <%= note.body %></p>
+  <hr/>
+  <%= link_to "Edit", edit_user_note_path(@note), class:'msg' %> |
+  <%= link_to "Back", root_path, class:'msg' %> |
+  <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
+              turbo_confirm: "Are you sure?"}, class:'msg' %>
+</div>

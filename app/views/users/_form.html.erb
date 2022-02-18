@@ -12,72 +12,126 @@
   <% end %>
 
 <%# ............................temp......................... %>
-  <section class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-start align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
-          alt="Sample image">
+  
+  
+  <%# ........................................new template..................................... %>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Registration</h2>
       </div>
-      <div class="col-md-10 col-lg-8 col-xl-6 offset-xl-1">
-        <form>
-          <div class="divider d-flex align-items-center mb-4">
-            <p class="text-center fw-bold mx-3 mb-0">SIGNUP</p>
-          </div>
 
-          
-          <div class="align-items-center">
-            <!-- Name input -->
-            <div class="col-md-7 form-outline mb-4">
-              <%= form.text_field :name, class: "form-control form-control-lg", type: "name", placeholder: "Enter Your Name" %>
-            </div>
-
-            <!-- Mobile input -->
-            <div class="col-md-7 form-outline mb-4">
-              <%= form.number_field :mobile, class: "form-control form-control-lg", type: "mobile", placeholder: "Enter Mobile Number" %>
-            </div>
-
-            <!-- Email input -->
-            <div class="col-md-7 form-outline mb-4">
-              <%= form.text_field :email, class: "form-control form-control-lg", type: "email", placeholder: "Enter a Valid Email" %>
-            </div>
-
-            <!-- Role input -->
-            <div class="col-md-7 form-outline mb-4">
-              <%= form.select :role, User.roles.keys, class: "form-control form-control-lg", type: "email", placeholder: "As a?" %>
-            </div>
-
-            <!-- Password input -->
-            <div class="col-md-7 form-outline mb-3">
-              <%= form.password_field :password, class: "form-control form-c  ontrol-lg", type: "password", placeholder: "Password" %>
-            </div>
-
-            <!-- Password Confirmation input -->
-            <div class="col-md-7 form-outline mb-3">
-              <%= form.password_field :password_confirmation, class: "form-control form-control-lg", type: "Retype_password", placeholder: "Retype Password" %>
-            </div>
-
-            <!-- Address input -->
-              <div class="col-md-7 form-outline mb-3">
-                <%= form.text_field :address, class: "form-control form-control-lg", type: "Address", placeholder: "Address" %>
+      <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">SignUp Form</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Name*</label>
+                <%= form.text_field :name, class: "form-control", type: "name", placeholder: "" %>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
               </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Number*</label>
+                <%= form.number_field :mobile, class: "form-control", type: "mobile", placeholder: "" %>
+                <div class="invalid-feedback">
+                  Valid number is required.
+                </div>
+              </div>
+            </div>
 
-              <div class="text-center text-lg-start mt-4 mr-5 pt-2">
-                <%= form.submit "SignUp", class: "btn btn-primary btn-lg signup" %>
+            <div class="mb-3">
+              <label for="email">Email*</label>
+              <%= form.text_field :email, class: "form-control", type: "email", placeholder: "Enter a Valid Email" %>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Password <span class="text-muted">*</span></label>
+              <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
+              <div class="invalid-feedback">
+                Please enter a valid password.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Retype Password<span class="text-muted">*</span></label>
+              <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
+              <div class="invalid-feedback">
+                Please enter password as above.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <%= form.text_field :address, class: "form-control", type: "Address", placeholder: "1234 Main St" %>
+              <div class="invalid-feedback">
+                Please enter your address.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Role</label>
+                <%= form.select :role, User.roles.keys, id: "country", class: "custom-select d-block w-100" %>
+                <div class="invalid-feedback">
+                  Please select a valid role.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+                <%= form.submit "SignUp", class: "btn btn-primary btn-lg btn-block" %>
                 <span class="small fw-bold mt-2 pt-1 mb-0">
-                  Have an account?<%= link_to 'Login', new_session_path, class: "link-danger" %>
+                  Have an account? <%= link_to 'Login', new_session_path, class: "link-danger" %>
                 </span>
               </div>
-            </div>
           </form>
         </div>
       </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">Copyright &copy; <%= Time.now.year %>. All rights reserved for Technology Scope</p>
+      </footer>
     </div>
-    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary mt-5">
-    <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
-      Copyright © <%= Time.now.year %>. All rights reserved.
-    </div>
-  </section>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
+
 
 <% end %>

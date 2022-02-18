@@ -1,9 +1,0 @@
-<%# ................template................ %>
-
-<div class="comment mt-4 text-justify float-left">
-  <h4 class='msg_name'><%= message.user.name %></h4 class='msg_name'> <span>- <%= message.created_at %></span> <br>
-  <p><b class='msg_name'>Message: </b> <%= message.body %></p>
-  <%= link_to "Destroy message", [message.user, message], data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?"}, class:'msg' %>
-</div>
-              

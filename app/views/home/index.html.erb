@@ -1,27 +1,29 @@
 <% if current_user %>
+  
   <div class='container'>
+
+  <%# .................................sidebar.................................... %>
+
+  
+
+  <%# ........................................sidebar end........................................ %>
     <h3> Logged Email: <%= current_user.email %> </h3>
+    <hr/>
     <h4> Logged In as: <%= current_user.role %> </h4>
     <%= link_to "Edit User", edit_user_path(current_user) %>
     <p class='notice'><%= notice %></p>
-    <%= link_to 'Log Out', session_path(:user_id),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn' %>
+    <p class='btn'><%= link_to 'Log Out', session_path(:user_id),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    <p class='btn'><%= link_to 'Add Note', new_user_note_path(current_user.id) %></p>
+    
+    <% Note.all.each do |note| %>
+      <li>
+        <p class='btn'><%= link_to note.id, user_note_path(current_user, note) %></p>
+      </li>
+    <% end %>
 
       <%# ...................................note................................. %>
 <!-- Main Body -->
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-5 col-md-6 col-12 pb-4">
-              <h1>Notes</h1>
-              <%= render current_user.messages %>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
-              <%= render 'messages/form' %>            
-            </div>
-        </div>
-    </div>
-</section>
 
       <%# ...................................task................................. %>
 
@@ -63,6 +65,7 @@
       </div>
     </div>  
   </div>
+  <%# <%= pagy_bootstrap_nav(@pagy).html_safe %>
 
 <% else %>
 

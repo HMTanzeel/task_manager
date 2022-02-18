@@ -1,13 +1,13 @@
-  <%= form_with model: [ current_user, current_user.messages.build ] do |form| %>
+  <%= form_with model: [ current_user, current_user.notes.build ] do |form| %>
   <%# .........................template........................... %>
-    <div id="algin-form">
+    <div id="algin-form" class="formbg">
       <div class="form-group">
         <h5>Add a Note</h5>
-        <label for="message">Type</label>
+        <label for="note">Type</label>
         <%= form.text_area :body, class: 'form-control', cols: "30", rows: "5" %>
       </div>
       <div class="form-group"> 
-      <%= form.submit 'Submit', class: 'btn' %> </div>
+      <%= form.submit 'Submit', class: 'btn', id: 'clicked' %> </div>
     </div>
   <% end %>
   

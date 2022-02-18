@@ -1,15 +1,4 @@
-body {
-  background-color: white;
-}
-
-h1, h2 {
-  color: black;
-  padding-left: 20px;
-}
-
 h3 {
-  background-color: #0d0d0d;
-  color: white;
   text-align: center;
   padding: 20px 5px;
   font-size: 40px;
@@ -21,102 +10,33 @@ h3 {
   padding-top: 10px;
   padding-left: 5px;
   padding-bottom: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: none;
-}
-
-.inputmail {
-  background-color: #f6f6f6;
-  border: none;
-  color: #0d0d0d;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 50%;
-  border-radius: 5px 5px 5px 5px;
-  box-shadow: 2px 2px 3px #000000;
-}
-
-.inputmail:hover {
-  border-bottom: 3px solid black;
-  
-}
-
-.box {
-  background-color: #ece4e4;
-  border: none;
-  color: #0d0d0d;
-  padding: 10px 50px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 5px;
-  width: 50%;
-  height: 150px;
-  border-radius: 20px 20px 20px 20px;
-}
-
-.box:hover {
-  box-shadow:0px 0px 0px -1px rgba(0, 0, 0, 0.2), 0px 0px 10px 0px rgba(0, 0, 0, 0.19);
-  z-index:1;
-}
-
-button, .btn {
-  border-radius: 80px;
-  margin: 20px;
-  background-color: black;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  padding: 5px 30px;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 2px 2px 4px #000000;
-  
-}
-.btn:hover {
-  color: yellow;
 }
 
 .msg {
   border-radius: 80px;
   margin: 20px;
   margin-bottom: -30px;
-  background-color: rgb(112, 108, 108);
+  background-color: black;
   border: none;
   text-align: center;
   text-decoration: none;
-  padding: 5px 15px;
+  padding: 3px 10px;
   margin-bottom: 0px;
   color: white;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .msg:hover {
   color: white;
-  background-color: blue;
-  font-size: 12px;
-  text-align: center;
+  background-color: rgb(173, 14, 14);
   text-decoration: none;
-}
-
-.new {
-  padding-left: 20px;
 }
 
 .notice {
   color:red;
-}
-
-#start {
-  padding: 10px 0px 10px 10px;
-  text-align: center;
 }
 
 .signbg {
@@ -145,212 +65,6 @@ button, .btn {
   background-color: white;
 }
 
-/* .................................login............................... */
-
-.divider:after,
-.divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #eee;
-}
-.h-custom {
-  height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
-  }
-}
-
-.signup {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-/* ..................................task form.................................... */
-
-body{
-  background-color: #f6f6f6;
-  margin-top:20px;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  border: none;
-  position: relative;
-  margin-bottom: 30px;
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
-}
-
-.card .card-header {
-  border-bottom-color: #f9f9f9;
-  line-height: 30px;
-  -ms-grid-row-align: center;
-  align-self: center;
-  width: 100%;
-  padding: 10px 25px;
-  display: flex;
-  align-items: center;
-}
-
-.card .card-header, .card .card-body, .card .card-footer {
-  background-color: transparent;
-  padding: 20px 25px;
-}
-.card-header:first-child {
-  border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-}
-.card-header {
-  padding: .75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: rgba(0,0,0,.03);
-  border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-.table:not(.table-sm) thead th {
-  border-bottom: none;
-  background-color: #e9e9eb;
-  color: #666;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.table .table-img img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 2px solid #bbbbbb;
-  -webkit-box-shadow: 5px 6px 15px 0px rgba(49,47,49,0.5);
-  -moz-box-shadow: 5px 6px 15px 0px rgba(49,47,49,0.5);
-  -ms-box-shadow: 5px 6px 15px 0px rgba(49,47,49,0.5);
-  box-shadow: 5px 6px 15px 0px rgba(49,47,49,0.5);
-  text-shadow: 0 0 black;
-}
-
-.table .team-member-sm {
-  width: 32px;
-  -webkit-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-.table .team-member {
-  position: relative;
-  width: 30px;
-  white-space: nowrap;
-  border-radius: 1000px;
-  vertical-align: bottom;
-  display: inline-block;
-}
-
-.table .order-list li img {
-  border: 2px solid #ffffff;
-  box-shadow: 4px 3px 6px 0 rgba(0,0,0,0.2);
-}
-.table .team-member img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  border: 0;
-  border-radius: 1000px;
-}
-.rounded-circle {
-  border-radius: 50% !important;
-}
-
-.table .order-list li+li {
-  margin-left: -14px;
-  background: transparent;
-}
-.avatar.avatar-sm {
-  font-size: 12px;
-  height: 30px;
-  width: 30px;
-}
-.avatar {
-  background: #6777ef;
-  border-radius: 50%;
-  color: #e3eaef;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0;
-  position: relative;
-  vertical-align: middle;
-  line-height: 1.28;
-  height: 45px;
-  width: 45px;
-}
-
-.table .order-list li .badge {
-  background: rgba(228,222,222,0.8);
-  color: #6b6f82;
-  margin-bottom: 6px;
-}
-
-.badge {
-  vertical-align: middle;
-  padding: 7px 12px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  border-radius: 30px;
-  font-size: 12px;
-}
-
-.progress-bar {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  overflow: hidden;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #007bff;
-  -webkit-transition: width .6s ease;
-  transition: width .6s ease;
-}
-
-.bg-success {
-  background-color: #54ca68 !important;
-}
-
-.bg-purple {
-  background-color: #9c27b0 !important;
-  color: #fff;
-}
-
-.bg-cyan {
-  background-color: #10cfbd !important;
-  color: #fff;
-}
-
-.bg-red {
-  background-color: #f44336 !important;
-  color: #fff;
-}
-
-.progress {
-  -webkit-box-shadow: 0 0.4rem 0.6rem rgba(0,0,0,0.15);
-  box-shadow: 0 0.4rem 0.6rem rgba(0,0,0,0.15);
-}
-
-.btn-action {
-  color: #fff !important;
-  line-height: 25px;
-  font-size: 12px;
-  min-width: 35px;
-  min-height: 35px;
-}
-
 /* ........................... notes / comments / message ...................................... */
 
 @media(min-width:568px) {
@@ -371,61 +85,17 @@ body{
   text-align: center;
   width: 100%;
   background-color: #ecb21f;
-  border-color: #a88734 #9c7e31 #846a29;
   color: black;
-  border-width: 1px;
-  border-style: solid;
   border-radius: 13px
-}
-
-#profile {
-  background-color: unset
-}
-
-#post {
-  margin: 10px;
-  padding: 6px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-align: center;
-  background-color: #ecb21f;
-  border-color: #a88734 #9c7e31 #846a29;
-  color: black;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 13px;
-  width: 50%
-}
-
-#nav-items li a,
-#profile {
-  text-decoration: none;
-  color: rgb(224, 219, 219);
-  background-color: black
-}
-
-.comments {
-  margin-top: 5%;
-  margin-left: 20px
 }
 
 .msg_name {
   color: white;
 }
 
-.darker {
-  border: 1px solid #ecb21f;
-  background-color: black;
-  float: right;
-  border-radius: 5px;
-  padding-left: 40px;
-  padding-right: 30px;
-  padding-top: 10px;
-}
-
 .comment {
-  border: 1px solid rgba(16, 46, 46, 1);
   background-color: rgba(16, 46, 46, 0.973);
+  width: 100%;
   float: left;
   border-radius: 20px;
   padding-left: 40px;
@@ -434,18 +104,8 @@ body{
   padding-bottom: 15px;
 }
 
-.comment h4,
-.comment span,
-.darker h4,
-.darker span {
-  display: inline
-}
-
-.comment p,
-.comment span,
-.darker p,
-.darker span {
-  color: rgb(184, 183, 183)
+.comment {
+  color: white
 }
 
 h5 {
@@ -453,37 +113,26 @@ h5 {
   font-weight: bold
 }
 
-label {
-  color: rgb(212, 208, 208)
-}
-
-#align-form {
-  margin-top: 20px
-}
-
-.form-group p a {
-  color: white
-}
-
-#checkbx {
-  background-color: black
-}
-
-#darker img {
-  margin-right: 15px;
-  position: static
-}
-
-.form-group input,
-.form-group textarea {
-  background-color: black;
-  border: 1px solid rgba(16, 46, 46, 1);
-  border-radius: 12px
-}
-
-form {
+.formbg {
   border: 1px solid rgba(16, 46, 46, 1);
   background-color: rgba(16, 46, 46, 0.973);
-  border-radius: 5px;
-  padding: 20px
+  padding: 15px;
+  border-radius: 1rem;
 }
+
+/* ..........................new form template..................................*/
+
+.container {
+  max-width: 960px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+/* .......................................side bar template..................................... */
+
