@@ -4,19 +4,19 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = current_user.notes.new(note_params)
+    @note = current_user.notes.new
   end
 
   def create
     @note = current_user.notes.create(note_params)
     respond_to do |format|
       if @note.save
-        format.html { redirect_to root_path, notice: "Note has successfully created." }
+        format.html { redirect_to [current_user, @note], notice: "Note has successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
     end
-    
+  
   end
 
   def show
@@ -24,6 +24,7 @@ class NotesController < ApplicationController
   end
 
   def edit
+    
     @note = Note.find(params[:id])
   end
 
@@ -39,8 +40,7 @@ class NotesController < ApplicationController
   def destroy
     @note = current_user.notes.find(params[:id])
     if @note.destroy
-      @note.destroy
-      redirect_to root_path, status: :ntoe_deleted
+      redirect_to root_path
     else
       redirect_to @note
     end

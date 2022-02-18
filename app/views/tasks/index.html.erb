@@ -1,0 +1,10 @@
+<div class='container'>
+
+    <h4 class="mt-4">List of Tasks</h4>
+    <% @tasks.each do |task| %>
+      <li>
+        <p class='btn'><%= link_to task.title, user_task_path(current_user, task) %></p>
+      </li>
+    <% end %>
+  <p class='btn'><%= link_to 'create new task', new_user_task_path %></p>
+</div>

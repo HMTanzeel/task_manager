@@ -1,0 +1,10 @@
+<div class='container'>
+
+    <h4 class="mt-4">List of Notes</h4>
+    <% Note.all.each do |note| %>
+      <li>
+        <p class='btn'><%= link_to note.id, user_note_path(current_user, note) %></p>
+      </li>
+    <% end %>
+
+</div>
