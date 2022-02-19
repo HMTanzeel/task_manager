@@ -1,10 +1,36 @@
-<div class='container'>
-
-    <h4 class="mt-4">List of Tasks</h4>
-    <% @tasks.each do |task| %>
-      <li>
-        <p class='btn'><%= link_to task.title, user_task_path(current_user, task) %></p>
-      </li>
-    <% end %>
-  <p class='btn'><%= link_to 'create new task', new_user_task_path %></p>
+<div class="container">
+  <div class="row">
+    <div class="col col-9">
+      <table class="table">
+        <button type="button" class="btn btn-success mb-2 float-right"><%= link_to "Create Task", new_user_task_path, class:'text-light' %></button>
+          <thead class="bg-dark text-white">
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Title</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+        <% @tasks.each do |task| %>
+          <tbody>
+            <tr>
+              <td><%= task.id %></td>
+              <td><%= task.title %></td>
+              <td><%= task.started_at %></td>
+              <td>
+                <button type="button" class="btn btn-success mb-1 btn-sm"><%= link_to "Edit", [:edit, current_user, task], class:'text-light' %></button>
+                <br/>
+                <button type="button" class="btn btn-primary mb-1 btn-sm">
+                  <%= link_to 'show', user_task_path(current_user, task), class:'text-light' %>
+                </button>
+                <br/>
+                <button type="button" class="btn btn-danger mb-1 btn-sm"><%= link_to "Delete", [current_user, task],
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'text-light' %></button>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>      
 </div>

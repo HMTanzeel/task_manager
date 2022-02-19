@@ -50,6 +50,6 @@ class NotesController < ApplicationController
 
   private
     def note_params
-      params.permit(:body)
+      params.permit(:title, :body)
     end
 end
