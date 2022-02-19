@@ -1,79 +1,24 @@
-<% if current_user %>
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to 'Home', root_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Edit User", edit_user_path(current_user), class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= link_to 'Notes', user_notes_path(current_user.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= link_to 'Tasks', user_tasks_path(current_user.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-        
-            <%= link_to 'Log Out', session_path(:user_id), class: "nav-link",data: {turbo_method: :delete,
-                turbo_confirm: "Are you sure?"} %>
-          </li>
-        </ul>
-        <h4 class="mr-auto"> <%= current_user.email %> </h4>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    <%# .............................................nav end........................................ %>
-<div class='container'>
-  <% unless notice.nil? %>
-    <div class="alert alert-secondary" role="alert">
-      <%= notice %> 
-    </div>
-  <% end %>
-
-<% else %>
-
-  <div class = "container">
-
-    <div class = "row startbg">
-      <div class = "col-6 m-auto p-3" id = "start">
-        <h3>Want to LOGIN or SIGNUP?</h3>
-      </div>
-    </div>
-
-    <div class = "row">
-      <div class = "col-6 m-auto p-2" id = "menu">
-        
-        <ul class = "signbg">
-          <li><p><%= link_to 'Sign Up', new_user_path %></p></li>
-          <li><p>or</p></li>
-          <li><p><%= link_to 'Log In', new_session_path %></p></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class = "row whitbg">
-      <div class = "col-sm-6 m-auto p-4" id = "content">
-        <p>Like we said, people don’t enjoy filling out forms. Designers have to create forms
-           that are so easy to fill out that the user doesn’t have to do much work.
-           This leads us to Medium’s signup page. After clicking the “Get started” call to
-           action button on the homepage, a modal pops up. You see an engaging illustration for
-           visual interest. But what is striking is there are no input fields. Are we on to a
-           winner already?
-        </p>
-      </div>
-    </div>
-
+  <div class="collapse navbar-collapse" id="navbarsExample03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'Sign Up', new_user_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Log In', new_session_path, class: 'nav-link' %>
+      </li>
+    </ul>
   </div>
-<% end %>
-<p><%= notice %></p>
+</nav>
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="font-weight-bolder"> You are not login <h3>
+    </div>
+  </div>
+</div>

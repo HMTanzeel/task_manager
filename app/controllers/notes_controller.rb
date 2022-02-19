@@ -1,6 +1,8 @@
 class NotesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @notes = Note.all
+    @notes = current_user.notes
   end
 
   def new

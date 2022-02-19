@@ -1,10 +1,15 @@
 <div class='container'>
-
+  <div class='row'>
+    <div class='col'>
     <h4 class="mt-4">List of Notes</h4>
-    <% Note.all.each do |note| %>
-      <li>
-        <p class='btn'><%= link_to note.id, user_note_path(current_user, note) %></p>
-      </li>
-    <% end %>
-
+      <% Note.all.each do |note| %>
+        <li>
+          <p class='btn'><%= link_to note.id, user_note_path(current_user, note) %></p>
+        </li>
+      <% end %>
+    </div>
+    <div class='col'>
+      <h4><%= link_to "Create Note", new_user_note_path, class:'btn' %></h4>
+    </div>
+  </div>
 </div>

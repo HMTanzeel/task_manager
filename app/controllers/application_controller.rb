@@ -2,16 +2,11 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend 
   helper_method :current_user
 
-  def authenticate_user
-    redirect_to root_path unless current_user
+  def authenticate_user!
+    redirect_to request.referer || root_path unless current_user
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    else
-      @current_user = nil
-    end
+    @current_user ||= User.find_by_id(session[:user_id]).presence || nil
   end
-  
 end
