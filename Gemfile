@@ -9,7 +9,6 @@ gem "rails", "~> 7.0.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-#pagygem for voew
 gem 'pagy'
 
 # Use sqlite3 as the database for Active Record

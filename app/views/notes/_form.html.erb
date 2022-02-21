@@ -1,15 +1,15 @@
-  <%= form_with model: [ current_user, current_user.notes.build ] do |form| %>
-    <div id="algin-form" class="formbg">
-      <div class="form-group">
-        <h5>Add a Note</h5>
-        <label for="note" class="text-white">Title</label>
-        <%= form.text_field :title, class: 'form-control', cols: "30", rows: "5" %>
-        <label for="note" class="text-white">Note</label>
-        <%= form.text_area :body, class: 'form-control', cols: "30", rows: "5" %>
-      </div>
-      <div class="form-group"> 
-        <%= form.submit 'Submit', class: 'btn', id: 'clicked' %>
-      </div>
+<%= form_with model: [ current_user, current_user.notes.build ] do |form| %>
+  <div id="align-form" class="formbg">
+    <div class="form-group">
+      <h5>Add a Note</h5>
+      <label for="note" class="text-white">Title</label>
+      <%= form.text_field :title, class: 'form-control', cols: "30", rows: "5" %>
+      <label for="note" class="text-white">Note</label>
+      <%= form.text_area :body, class: 'form-control', cols: "30", rows: "5" %>
     </div>
-  <% end %>
+    <div class="form-group"> 
+      <%= form.submit 'Submit', class: 'btn', id: 'clicked' %>
+    </div>
+  </div>
+<% end %>
     

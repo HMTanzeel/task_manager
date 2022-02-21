@@ -7,8 +7,8 @@
   </td>
   <td class="col-2"><%= task.title %></td>
   <td class="col-3"><%= task.discription %></td>
-  <td class="col-2"><%= task.started_at %></td>
-  <td class="col-2"><%= task.close_at %></td>
+  <td class="col-2"><%= task.started_at.to_date.strftime("%d %b, %Y") %></td>
+  <td class="col-2"><%= task.close_at.to_date.strftime("%d %b, %Y") %></td>
   <td>
     <%= link_to " Delete", [task.user, task], data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
         class: "btn btn-danger btn-action fas fa-trash" %>

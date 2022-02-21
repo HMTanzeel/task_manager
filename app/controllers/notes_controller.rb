@@ -27,7 +27,6 @@ class NotesController < ApplicationController
   end
 
   def update
-    # @note = current_user.notes.find(params[:id])
     if @note.update(note_params)
       format.html { redirect_to @note }
     else
@@ -46,6 +45,6 @@ class NotesController < ApplicationController
 
   private
     def note_params
-      params.permit(:title, :body)
+      params.require(:note).permit(:title, :body)
     end
 end

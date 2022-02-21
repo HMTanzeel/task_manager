@@ -7,8 +7,19 @@
   <p><b class='msg_name'>Note: </b> <%= note.body %></p>
   <hr/>
   
-  <%= link_to "Edit", [:edit, current_user, note], class:'msg' %> |
-  <%= link_to "Back", user_notes_path, class:'msg' %> |
+  <%= link_to "Edit", [:edit, current_user, note], class:'btn btn-success msg' %> |
+  <%= link_to "Back", user_notes_path, class:'btn btn-primary msg' %> |
   <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?"}, class:'msg' %>
+              turbo_confirm: "Are you sure?"}, class:'btn btn-danger msg' %>
 </div>
+
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
