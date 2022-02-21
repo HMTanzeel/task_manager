@@ -51,8 +51,6 @@ h5 {
   border-radius: 1rem;
 }
 
-/* ..........................new form template..................................*/
-
 .container {
   max-width: 960px;
 }
@@ -65,15 +63,9 @@ h5 {
 
 .lh-condensed { line-height: 1.25; }
 
-/* .......................................side bar template..................................... */
-/* .............................nav............................ */
-
 .navbar {
   margin-bottom: 20px;
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
 
 html {
   position: relative;
