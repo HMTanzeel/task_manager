@@ -1,68 +1,7 @@
-h3 {
-  text-align: center;
-  padding: 20px 5px;
-  font-size: 40px;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-.para-class, p {
-  padding-top: 10px;
-  padding-left: 5px;
-  padding-bottom: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-decoration: none;
-}
-
 .msg {
   border-radius: 80px;
-  margin: 20px;
-  margin-bottom: -30px;
-  background-color: black;
-  border: none;
-  text-align: center;
-  text-decoration: none;
   padding: 3px 10px;
-  margin-bottom: 0px;
-  color: white;
   font-size: 12px;
-  font-weight: bold;
-}
-
-.msg:hover {
-  color: white;
-  background-color: rgb(173, 14, 14);
-  text-decoration: none;
-}
-
-.notice {
-  color:red;
-}
-
-.signbg {
-  background-color: pink;
-}
-
-#menu {
-  padding: 20px 0px;
-  text-align: center;
-}
-
-#menu ul {
-  list-style: none;
-  margin: 0;
-}
-
-#menu ul li {
-  display: inline-block;
-}
-
-#content {
-  text-align: center;
-}
-
-.whitbg {
-  background-color: white;
 }
 
 /* ........................... notes / comments / message ...................................... */
@@ -70,12 +9,6 @@ h3 {
 @media(min-width:568px) {
   .end {
       margin-left: auto
-  }
-}
-
-@media(max-width:768px) {
-  #post {
-      width: 100%
   }
 }
 
@@ -110,7 +43,6 @@ h3 {
 
 h5 {
   color: white;
-  font-weight: bold
 }
 
 .formbg {

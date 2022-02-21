@@ -6,8 +6,8 @@
   <p><b class='msg_name'>Note: </b> <%= note.body %></p>
   <hr/>
   
-  <%= link_to "Edit", [:edit, current_user, note], class:'msg' %> |
-  <%= link_to "Back", user_notes_path, class:'msg' %> |
+  <%= link_to "Edit", [:edit, current_user, note], class:'btn btn-success msg' %> |
+  <%= link_to "Back", user_notes_path, class:'btn btn-primary msg' %> |
   <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?"}, class:'msg' %>
+              turbo_confirm: "Are you sure?"}, class:'btn btn-danger msg' %>
 </div>
