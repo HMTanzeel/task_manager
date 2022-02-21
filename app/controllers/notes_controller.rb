@@ -11,14 +11,11 @@ class NotesController < ApplicationController
 
   def create
     @note = current_user.notes.create(note_params)
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to [current_user, @note], notice: "Note has successfully created." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @note.save
+      redirect_to [current_user, @note], notice: "Note has successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
-  
   end
 
   def show
@@ -26,12 +23,11 @@ class NotesController < ApplicationController
   end
 
   def edit
-    
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
   end
 
   def update
-    @note = Note.find(params[:id])
+    # @note = current_user.notes.find(params[:id])
     if @note.update(note_params)
       format.html { redirect_to @note }
     else
