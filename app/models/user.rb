@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_many :tasks
   has_secure_password
   validates :email, presence: true, uniqueness: true
-  enum :role, [:Admin, :Employee]
+  enum :role, [:admin, :employee]
 end

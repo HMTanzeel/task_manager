@@ -5,17 +5,15 @@
         <button type="button" class="btn btn-success mb-2 float-right"><%= link_to "Create Note", new_user_note_path, class:'text-light' %></button>
           <thead class="bg-dark text-white">
             <tr>
-              <th scope="col">No.</th>
               <th scope="col">Title</th>
-              <th scope="col" class="float-right">Actions</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
-        <% Note.all.each do |note| %>
+          <% @notes.each do |note| %>
           <tbody>
             <tr>
-              <td><%= note.id %></td>
               <td><%= note.title %></td>
-              <td class="float-right">
+              <td >
                 <button type="button" class="btn btn-success mb-1 btn-sm"><%= link_to "Edit", [:edit, current_user, note], class:'text-light' %></button>
                 <br/>
                 <button type="button" class="btn btn-primary mb-1 btn-sm"><%= link_to "show", user_note_path(current_user, note),

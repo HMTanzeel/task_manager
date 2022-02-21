@@ -15,38 +15,33 @@
                   <th>Task Name</th>
                   <th>Discription</th>
                   <th>Start Date</th>
-                  <th>Close Date</th>
-                  
+                  <th>Close Date</th> 
                 </tr>
                 <tr>
                   <td class="p-0 text-center">
                   </td>
-                  <!-- Title input -->
                   <td class="col-3">
                     <div class="form-outline mb-4">
                       <%= form.text_field 'title', class: 'form-control form-control-lg', placeholder: 'Task Title' %>
                     </div>
                   </td>
-                  <!-- Description input -->
                   <td class="col-3">
                     <div class="form-outline mb-4">
-                      <%= form.text_field 'discription', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                      <%= form.text_field 'description', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
                     </div>
                   </td>
-                  <!-- Start Time input -->
                   <td>
                     <div class="form-outline mb-4">
-                      <%= form.date_field 'started_at', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                      <%= form.date_field 'started_at', class: 'form-control form-control-lg', placeholder: 'Starting Date' %>
                     </div>
                   </td>
-                  <!-- End Time input -->
                   <td class="col-2">
                     <div class="form-outline mb-4">
-                      <%= form.date_field 'close_at', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
+                      <%= form.date_field 'close_at', class: 'form-control form-control-lg', placeholder: 'Closing Date' %>
                     </div>
                   </td>
                   <td>
-                    <span data-toggle="tooltip" title="" data-original-title="Edit">
+                    <span data-toggle="tooltip" title="">
                       <%= form.submit 'Save', class: "btn btn-primary btn-action mr-1" %>
                     </span>
                   </td>

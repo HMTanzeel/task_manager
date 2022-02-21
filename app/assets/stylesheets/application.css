@@ -1,54 +1,7 @@
-.msg {
-  border-radius: 15px;
-  padding: 4px 12px;
-  font-size: 12px;
-}
-
 @media(min-width:568px) {
   .end {
       margin-left: auto
   }
-}
-
-#clicked {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  text-align: center;
-  width: 100%;
-  background-color: #ecb21f;
-  color: black;
-  border-radius: 13px
-}
-
-.msg_name {
-  color: white;
-}
-
-.comment {
-  background-color: rgba(16, 46, 46, 0.973);
-  width: 100%;
-  float: left;
-  border-radius: 20px;
-  padding-left: 40px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
-
-.comment {
-  color: white
-}
-
-h5 {
-  color: white;
-  font-weight: bold
-}
-
-.formbg {
-  border: 1px solid rgba(16, 46, 46, 1);
-  background-color: rgba(16, 46, 46, 0.973);
-  padding: 15px;
-  border-radius: 1rem;
 }
 
 .container {

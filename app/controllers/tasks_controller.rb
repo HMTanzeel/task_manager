@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def new
@@ -17,16 +17,16 @@ class TasksController < ApplicationController
     @task = current_user.tasks.create(task_params)
     respond_to do |format|
       if @task.save
-        format.html { redirect_to [current_user, @task], notice: "Task has successfully created." }
+        redirect_to [current_user, @task], notice: "Task has successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
     end
   end
 
   def destroy
-    @task = current_user.tasks.find(params[:id])
-    @task.destroy
+    task = current_user.tasks.find(params[:id])
+    task.destroy
     redirect_to user_tasks_path
   end
 

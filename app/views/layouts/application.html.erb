@@ -25,9 +25,7 @@
 
   <body>
 
-    <% if current_user.present? %>
-      <%= render "layouts/navbar" %>
-    <% end %>
+    <%= render "layouts/navbar" if current_user.present? %>
 
     <%= yield %>
 

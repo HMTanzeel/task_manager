@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_note, only: [:show, :edit, :destroy, :update]
 
   def index
     @notes = current_user.notes
@@ -18,33 +19,33 @@ class NotesController < ApplicationController
     end
   end
 
-  def show
-    @note = Note.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @note = current_user.notes.find(params[:id])
-  end
+  def edit; end
 
   def update
     if @note.update(note_params)
-      format.html { redirect_to @note }
+      redirect_to @note
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @note = current_user.notes.find(params[:id])
     if @note.destroy
       redirect_to root_path
     else
       redirect_to @note
+      alert @note.errors.full_messages
     end
   end
 
   private
     def note_params
       params.require(:note).permit(:title, :body)
+    end
+
+    def find_note
+      @note = current_user.notes.find(params[:id])
     end
 end

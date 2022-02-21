@@ -1,14 +1,14 @@
 <%= form_with model: [ current_user, current_user.notes.build ] do |form| %>
-  <div id="align-form" class="formbg">
+  <div id="align-form">
     <div class="form-group">
       <h5>Add a Note</h5>
-      <label for="note" class="text-white">Title</label>
-      <%= form.text_field :title, class: 'form-control', cols: "30", rows: "5" %>
-      <label for="note" class="text-white">Note</label>
-      <%= form.text_area :body, class: 'form-control', cols: "30", rows: "5" %>
+      <label for="note">Title</label>
+      <%= form.text_field :title, class: 'form-control' %>
+      <label for="note">Note</label>
+      <%= form.text_area :body, class: 'form-control' %>
     </div>
     <div class="form-group"> 
-      <%= form.submit 'Submit', class: 'btn', id: 'clicked' %>
+      <%= form.submit 'Submit', class: 'btn btn-success' %>
     </div>
   </div>
 <% end %>

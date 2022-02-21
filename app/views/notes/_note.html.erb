@@ -1,25 +1,12 @@
-<%# ................template................ %>
-
-<div class="comment mt-4 text-justify float-left">
-  <h4 class='msg_name'><%= note.user.name %></h4> <span>- <%= note.created_at %></span>
-  <br/>
-  <p><b class='msg_name'>Title: </b> <%= note.title %></p>
-  <p><b class='msg_name'>Note: </b> <%= note.body %></p>
-  <hr/>
-  
-  <%= link_to "Edit", [:edit, current_user, note], class:'btn btn-success msg' %> |
-  <%= link_to "Back", user_notes_path, class:'btn btn-primary msg' %> |
-  <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
-              turbo_confirm: "Are you sure?"}, class:'btn btn-danger msg' %>
-</div>
-
-
 <div class="card">
-  <h5 class="card-header">Featured</h5>
+  <h5 class="card-header">Created at: <%= note.created_at.to_date.strftime("%d %b, %Y") %></h5>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title"><b>Title:</b> <%= note.title %></h5>
+    <p class="card-text"><b>Note:</b> <%= note.body %></p>
+    <%= link_to "Edit", [:edit, current_user, note], class:'btn btn-success' %>
+    <%= link_to "Back", user_notes_path, class:'btn btn-primary' %>
+    <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
+              turbo_confirm: "Are you sure?"}, class:'btn btn-danger' %>
   </div>
 </div>
 

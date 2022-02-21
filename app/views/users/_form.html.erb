@@ -10,128 +10,117 @@
       </ul>
     </div>
   <% end %>
-
-<%# ............................temp......................... %>
   
-  
-  <%# ........................................new template..................................... %>
-
-  <body class="bg-light">
-
-    <div class="container">
-      <div class="py-5 text-center">
-        <h2>Registration</h2>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">SignUp Form</h4>
-          <form class="needs-validation" novalidate>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">Name*</label>
-                <%= form.text_field :name, class: "form-control", type: "name", placeholder: "" %>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Number*</label>
-                <%= form.number_field :mobile, class: "form-control", type: "mobile", placeholder: "" %>
-                <div class="invalid-feedback">
-                  Valid number is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Email*</label>
-              <%= form.text_field :email, class: "form-control", type: "email", placeholder: "Enter a Valid Email" %>
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Password <span class="text-muted">*</span></label>
-              <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
-              <div class="invalid-feedback">
-                Please enter a valid password.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="email">Retype Password<span class="text-muted">*</span></label>
-              <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
-              <div class="invalid-feedback">
-                Please enter password as above.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="address">Address</label>
-              <%= form.text_field :address, class: "form-control", type: "Address", placeholder: "1234 Main St" %>
-              <div class="invalid-feedback">
-                Please enter your address.
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="country">Role</label>
-                <%= form.select :role, User.roles.keys, id: "country", class: "custom-select d-block w-100" %>
-                <div class="invalid-feedback">
-                  Please select a valid role.
-                </div>
-              </div>
-            </div>
-            <hr class="mb-4">
-                <%= form.submit "SignUp", class: "btn btn-primary btn-lg btn-block" %>
-                <span class="small fw-bold mt-2 pt-1 mb-0">
-                  Have an account? <%= link_to 'Login', new_session_path, class: "link-danger" %>
-                </span>
-              </div>
-          </form>
-        </div>
-      </div>
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">Copyright &copy; <%= Time.now.year %>. All rights reserved for Technology Scope</p>
-      </footer>
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Registration</h2>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">SignUp Form</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Name*</label>
+              <%= form.text_field :name, class: "form-control", type: "name", placeholder: "" %>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Number*</label>
+              <%= form.number_field :mobile, class: "form-control", type: "mobile", placeholder: "" %>
+              <div class="invalid-feedback">
+                Valid number is required.
+              </div>
+            </div>
+          </div>
 
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
+          <div class="mb-3">
+            <label for="email">Email*</label>
+            <%= form.text_field :email, class: "form-control", type: "email", placeholder: "Enter a Valid Email" %>
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
 
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  </body>
-</html>
+          <div class="mb-3">
+            <label for="email">Password <span class="text-muted">*</span></label>
+            <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
+            <div class="invalid-feedback">
+              Please enter a valid password.
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="email">Retype Password<span class="text-muted">*</span></label>
+            <%= form.password_field :password, class: "form-control", type: "password", placeholder: "Password" %>
+            <div class="invalid-feedback">
+              Please enter password as above.
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <%= form.text_field :address, class: "form-control", type: "Address", placeholder: "1234 Main St" %>
+            <div class="invalid-feedback">
+              Please enter your address.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Role</label>
+              <%= form.select :role, User.roles.keys, id: "country", class: "custom-select d-block w-100" %>
+              <div class="invalid-feedback">
+                Please select a valid role.
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+              <%= form.submit "SignUp", class: "btn btn-primary btn-lg btn-block" %>
+              <span class="small fw-bold mt-2 pt-1 mb-0">
+                Have an account? <%= link_to 'Login', new_session_path, class: "link-danger" %>
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">Copyright &copy; <%= Time.now.year %>. All rights reserved for Technology Scope</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../../../dist/js/bootstrap.min.js"></script>
+  <script src="../../../../assets/js/vendor/holder.min.js"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 <% end %>
