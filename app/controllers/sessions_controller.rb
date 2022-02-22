@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_notes_path(user.id), notice: "You are successfully logged in"
+      redirect_to root_path, notice: "You are successfully logged in"
     else
       redirect_to new_session_path, alert: "Invalid email and/or password combination"
     end

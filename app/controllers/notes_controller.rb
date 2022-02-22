@@ -15,7 +15,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to [current_user, @note], notice: "Note has successfully created."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_notes_path, alert: @note.errors.full_messages
     end
   end
 
@@ -35,8 +35,7 @@ class NotesController < ApplicationController
     if @note.destroy
       redirect_to root_path
     else
-      redirect_to @note
-      alert @note.errors.full_messages
+      redirect_to user_notes_path, alert: @note.errors.full_messages
     end
   end
 

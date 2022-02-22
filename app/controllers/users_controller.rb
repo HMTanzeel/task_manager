@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_session_url(@user), notice: "User was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_session_url, status: :unprocessable_entity
     end
   end
 
@@ -28,15 +28,15 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to root_path, notice: "User has successfully updated."
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to edit_user_path(@user), alert: @user.errors.full_messages
     end
   end
 
   def destroy
-    @user.destroy
-
-    respond_to do |format|
-      redirect_to users_url, notice: "User was successfully destroyed."
+    if @user.destroy
+    redirect_to users_url, notice: "User was successfully destroyed."
+    else
+      redirect_to users_path, alert: @user.errors.full_messages
     end
   end
 
