@@ -1,0 +1,31 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <table class='table mb-5'>
+        <%= link_to 'Create Note', new_user_note_path, class:'btn btn-success mb-2 float-right text-light' %>
+          <thead class='bg-dark text-white'>
+            <tr>
+              <th scope='col'>Title</th>
+              <th scope='col'>Create Date</th>
+              <th scope='col'>Note</th>
+              <th scope='col'>Actions</th>
+            </tr>
+          </thead>
+          <% @notes.each do |note| %>
+          <tbody>
+            <tr>
+              <td><%= note.title %></td>
+              <td><%= format_date(note.created_at) %></td>
+              <td><%= note.body.truncate(28) %></td>
+              <td>
+                <p><%= link_to 'Edit', [:edit, current_user, note], class:'btn btn-success mb-1 btn-sm text-light' %></p>
+                <p><%= link_to 'show', user_note_path(current_user, note), class:'btn btn-primary mb-1 btn-sm text-light' %></p>
+                <p><%= link_to 'Delete', [current_user, note], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class:'btn btn-danger mb-1 btn-sm text-light' %></p>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>      
+</div>

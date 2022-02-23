@@ -1,6 +1,6 @@
-class CreateMessages < ActiveRecord::Migration[7.0]
+class Notes < ActiveRecord::Migration[7.0]
   def change
-    create_table :messages do |t|
+    create_table :notes do |t|
       t.string :body
       t.references :user, null: false, foreign_key: true
 

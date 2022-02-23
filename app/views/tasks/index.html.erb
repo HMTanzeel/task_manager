@@ -1,0 +1,33 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <table class='table mb-5'>
+        <%= link_to 'Create Task', new_user_task_path, class:'btn btn-success mb-2 float-right text-light' %>
+        <thead class='bg-dark text-white'>
+          <tr>
+            <th scope='col'>Title</th>
+            <th scope='col'>Description</th>
+            <th scope='col'>Start Date</th>
+            <th scope='col'>Actions</th>
+          </tr>
+        </thead>
+        <% @tasks.each do |task| %>
+          <tbody>
+            <tr>
+              <td><%= task.title %></td>
+              <td><%= task.description.truncate(28) %></td>
+              <td><%= format_date(task.started_at) %></td>
+              <td>
+                <%= link_to 'Edit', [:edit, current_user, task], class:'btn btn-success mb-1 btn-sm text-light' %>
+                <br/>
+                <%= link_to 'show', user_task_path(current_user, task), class:'btn btn-primary mb-1 btn-sm text-light' %>
+                <br/>
+                <%= link_to 'Delete', [current_user, task], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:'btn btn-danger mb-1 btn-sm text-light' %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>      
+</div>

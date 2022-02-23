@@ -1,10 +1,8 @@
-<h1>Editing user</h1>
-
-<%= render "form", user: @user %>
+<% if current_user %>
+  <div class='text-center mb-5'>
+    <h2>Edit Profile</h2>
+  </div>
+  <%= render 'form', user: @user %>
+<% end %>
 
 <br>
-
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
