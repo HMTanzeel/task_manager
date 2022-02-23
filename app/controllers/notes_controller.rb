@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.create(note_params)
     if @note.save
-      redirect_to user_note_path(current_user, @note), notice: "Note has successfully created."
+      redirect_to user_note_path(current_user, @note), notice: 'Note has successfully created.'
     else
       redirect_to new_notes_path, alert: @note.errors.full_messages
     end
@@ -33,7 +33,9 @@ class NotesController < ApplicationController
 
   def destroy
     if @note.destroy
-      redirect_to user_notes_path, notice: "Note has been deleted succesfully."
+      redirect_to user_notes_path, notice: 'Note has been deleted succesfully.'
+    else
+      redirect_to user_note_path(current_user, @note), alert: @note.errors.full_messages
     end
   end
 

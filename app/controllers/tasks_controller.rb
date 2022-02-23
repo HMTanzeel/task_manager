@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :destroy, :update]
 
   def index
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks
   end
 
   def new
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.create(task_params)
     if @task.save
-      redirect_to [current_user, @task], notice: "Task has successfully created."
+      redirect_to [current_user, @task], notice: 'Task has successfully created.'
     else
       redirect_to new_user_task_path, alert: @task.errors.full_messages.to_sentence
     end
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
 
   def destroy
     if @task.destroy
-      redirect_to user_tasks_path
+      redirect_to user_tasks_path, notice: 'Note has been deleted succesfully.'
     else
       redirect_to user_tasks_path, alert: @task.errors.full_messages
     end

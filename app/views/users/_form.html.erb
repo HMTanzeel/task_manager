@@ -1,75 +1,47 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 order-md-1'>
+      <form class='needs-validation' novalidate>
+        <div class='row'>
+          <div class='col-md-6 mb-3'>
+            <label for='firstName'>Name*</label>
+            <%= form.text_field :name, class: 'form-control', type: 'name' %>
+          </div>
+          <div class='col-md-6 mb-3'>
+            <label for='lastName'>Mobile Number*</label>
+            <%= form.telephone_field :mobile, class: 'form-control', type: 'mobile' %>
+          </div>
+        </div>
+        <div class='mb-3'>
+          <label for='email'>Email*</label>
+          <%= form.text_field :email, class: 'form-control', type: 'email' %>
+        </div>
+        <div class='mb-3'>
+          <label for='email'>Password <span class='text-muted'>*</span></label>
+          <%= form.password_field :password, class: 'form-control', type: 'password' %>
+        </div>
+        <div class='mb-3'>
+          <label for='email'>Retype Password<span class='text-muted'>*</span></label>
+          <%= form.password_field :password, class: 'form-control', type: 'password' %>
+        </div>
+        <div class='mb-3'>
+          <label for='address'>Address</label>
+          <%= form.text_field :address, class: 'form-control', type: 'Address' %>
+        </div>
+        <div class='row'>
+          <div class='col-md-5 mb-3'>
+            <label for='country'>Role</label>
+            <%= form.select :role, User.roles.keys, id: 'country', class: 'custom-select d-block w-100' %>
+          </div>
+        </div>
+        <hr class='mb-4'>
+          <%= form.submit 'Submit', class: 'btn btn-primary btn-lg btn-block' %>
+          <span class='small fw-bold mt-2 pt-1'>
+            Have an account? <%= link_to 'Login', new_session_path, class: 'link-danger' %>
+          </span>
+        </div>
+      </form>
     </div>
-  <% end %>
-  
-  <div class="container">
-    <div class="py-5 text-center">
-      <h2>Registration</h2>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">SignUp Form</h4>
-        <form class="needs-validation" novalidate>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">Name*</label>
-              <%= form.text_field :name, class: "form-control", type: "name" %>
-            </div>
-            
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Mobile Number*</label>
-              <%= form.telephone_field :mobile, class: "form-control", type: "mobile" %>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="email">Email*</label>
-            <%= form.text_field :email, class: "form-control", type: "email" %>
-          </div>
-
-          <div class="mb-3">
-            <label for="email">Password <span class="text-muted">*</span></label>
-            <%= form.password_field :password, class: "form-control", type: "password" %>
-          </div>
-
-          <div class="mb-3">
-            <label for="email">Retype Password<span class="text-muted">*</span></label>
-            <%= form.password_field :password, class: "form-control", type: "password" %>
-          </div>
-
-          <div class="mb-3">
-            <label for="address">Address</label>
-            <%= form.text_field :address, class: "form-control", type: "Address" %>
-          </div>
-
-          <div class="row">
-            <div class="col-md-5 mb-3">
-              <label for="country">Role</label>
-              <%= form.select :role, User.roles.keys, id: "country", class: "custom-select d-block w-100" %>
-            </div>
-          </div>
-          <hr class="mb-4">
-              <%= form.submit "SignUp", class: "btn btn-primary btn-lg btn-block" %>
-              <span class="small fw-bold mt-2 pt-1 mb-0">
-                Have an account? <%= link_to 'Login', new_session_path, class: "link-danger" %>
-              </span>
-            </div>
-        </form>
-      </div>
-    </div>
-
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">Copyright &copy; <%= Time.now.year %>. All rights reserved for Technology Scope</p>
-    </footer>
   </div>
+</div>
 <% end %>

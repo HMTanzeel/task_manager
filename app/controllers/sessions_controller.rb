@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: "You are successfully logged in"
+      redirect_to root_path, notice: 'You are successfully logged in'
     else
-      redirect_to new_session_path, alert: "Invalid email and/or password combination"
+      redirect_to new_session_path, alert: 'Invalid email and/or password combination'
     end
   end
 
   def destroy
     session.clear
-    redirect_to root_url, notice: "You are successfully logged out."
+    redirect_to root_url, notice: 'You are successfully logged out.'
   end  
 end

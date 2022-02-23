@@ -1,15 +1,14 @@
 <tr>
-  <td class="p-0 text-center">
-    <div class="custom-checkbox custom-control">
-      <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
-      <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+  <td class='p-0 text-center'>
+    <div class='custom-checkbox custom-control'>
+      <input type='checkbox' data-checkboxes='mygroup' class='custom-control-input' id='checkbox-1'>
+      <label for='checkbox-1' class='custom-control-label'>&nbsp;</label>
     </div>
   </td>
-  <td class="col-2"><%= @task.title %></td>
-  <td class="col-3"><%= @task.description %></td>
-  <td class="col-2"><%= formatted_date(@task.started_at) %></td>
+  <td class='col-2'><%= @task.title %></td>
+  <td class='col-3'><%= @task.description %></td>
+  <td class='col-2'><%= format_date(@task.started_at) %></td>
   <td>
-    <%= link_to " Delete", [@task.user, @task], data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
-        class: "btn btn-danger btn-action fas fa-trash" %>
+    <%= link_to ' Delete', [@task.user, @task], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-action fas fa-trash' %>
   </td>
 </tr>

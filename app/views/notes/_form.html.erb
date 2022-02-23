@@ -1,13 +1,13 @@
-<%= form_with model: [ current_user, @note ] do |form| %>
-  <div id="align-form">
-    <div class="form-group">
-      <h5>Add a Note</h5>
-      <label for="note">Title</label>
+<%= form_with model: [current_user,@note] do |form| %>
+  <div id='align-form'>
+    <h5>Add a Note</h5>
+    <div class='form-group'>
+      <label for='note'>Title</label>
       <%= form.text_field :title, class: 'form-control' %>
-      <label for="note">Note</label>
+      <label for='note'>Note</label>
       <%= form.text_area :body, class: 'form-control' %>
     </div>
-    <div class="form-group"> 
+    <div class='form-group'> 
       <%= form.submit 'Submit', class: 'btn btn-success' %>
     </div>
   </div>
