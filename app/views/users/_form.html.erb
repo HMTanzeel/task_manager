@@ -28,11 +28,6 @@
           <label for='address'>Address</label>
           <%= form.text_field :address, class: 'form-control', type: 'Address' %>
         </div>
-        <div class='row'>
-          <div class='col-md-5 mb-3'>
-            <label for='role'>Role</label>
-            <%= form.select :role, User.roles.keys, id: 'Role', class: 'custom-select d-block w-100' %>
-          </div>
         </div>
         <hr class='mb-4'>
           <%= form.submit 'Submit', class: 'btn btn-primary btn-lg btn-block' %>
