@@ -30,8 +30,8 @@
         </div>
         <div class='row'>
           <div class='col-md-5 mb-3'>
-            <label for='country'>Role</label>
-            <%= form.select :role, User.roles.keys, id: 'country', class: 'custom-select d-block w-100' %>
+            <label for='Role'>Role</label>
+            <%= form.select :role, User.roles.keys, id: 'Role', class: 'custom-select d-block w-100' %>
           </div>
         </div>
         <hr class='mb-4'>
@@ -44,4 +44,3 @@
     </div>
   </div>
 </div>
-<% end %>
