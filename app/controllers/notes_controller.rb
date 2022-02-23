@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.create(note_params)
     if @note.save
-      redirect_to [current_user, @note], notice: "Note has successfully created."
+      redirect_to user_note_path(current_user, @note), notice: "Note has successfully created."
     else
       redirect_to new_notes_path, alert: @note.errors.full_messages
     end
@@ -25,17 +25,15 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to @note
+      redirect_to user_note_path(current_user, @note)
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to edit_user_note_path(current_user, @note), alert: @note.errors.full_messages
     end
   end
 
   def destroy
     if @note.destroy
-      redirect_to root_path
-    else
-      redirect_to user_notes_path, alert: @note.errors.full_messages
+      redirect_to user_notes_path, notice: "Note has been deleted succesfully."
     end
   end
 

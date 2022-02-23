@@ -1,12 +1,11 @@
 <div class="card">
-  <h5 class="card-header">Created at: <%= note.created_at.to_date.strftime("%d %b, %Y") %></h5>
+  <h5 class="card-header">Created at: <%= formatted_date(note.created_at) %></h5>
   <div class="card-body">
     <h5 class="card-title"><b>Title: </b> <%= note.title %></h5>
     <p class="card-text"><b>Note: </b> <%= note.body %></p>
     <%= link_to "Edit", [:edit, current_user, note], class:'btn btn-success' %>
     <%= link_to "Back", user_notes_path, class:'btn btn-primary' %>
-    <%= link_to "Delete", [note.user, note], data: { turbo_method: :delete,
+    <%= link_to "Delete", [current_user, @note], data: { turbo_method: :delete,
               turbo_confirm: "Are you sure?"}, class:'btn btn-danger' %>
   </div>
 </div>
-

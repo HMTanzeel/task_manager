@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :destroy, :update]
 
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.all
   end
 
   def new
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to [current_user, @task], notice: "Task has successfully created."
     else
-      redirect_to new_tasks_path, alert: @task.errors.full_messages
+      redirect_to new_user_task_path, alert: @task.errors.full_messages.to_sentence
     end
   end
 
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to @task
+      redirect_to user_task_path(current_user, @task)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
 
   def destroy
     if @task.destroy
-      redirect_to root_path
+      redirect_to user_tasks_path
     else
       redirect_to user_tasks_path, alert: @task.errors.full_messages
     end
@@ -41,10 +41,10 @@ class TasksController < ApplicationController
 
   private
     def task_params
-      params.require(:task).permit(:title, :discription, :started_at, :close_at)
+      params.require(:task).permit(:title, :description, :started_at, :close_at)
     end
 
     def find_task
-      task = current_user.tasks.find(params[:id])
+      @task = current_user.tasks.find(params[:id])
     end
   end

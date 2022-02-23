@@ -1,4 +1,4 @@
-<%= form_with model: [ current_user, current_user.notes.build ] do |form| %>
+<%= form_with model: [ current_user, @note ] do |form| %>
   <div id="align-form">
     <div class="form-group">
       <h5>Add a Note</h5>

@@ -6,6 +6,8 @@
           <thead class="bg-dark text-white">
             <tr>
               <th scope="col">Title</th>
+              <th scope="col">Create Date</th>
+              <th scope="col">Note</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
@@ -13,6 +15,8 @@
           <tbody>
             <tr>
               <td><%= note.title %></td>
+              <td><%= formatted_date(note.created_at) %></td>
+              <td><%= note.body.truncate(28) %></td>
               <td >
                 <button type="button" class="btn btn-success mb-1 btn-sm"><%= link_to "Edit", [:edit, current_user, note], class:'text-light' %></button>
                 <br/>

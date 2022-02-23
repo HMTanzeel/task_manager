@@ -24,11 +24,11 @@
   </head>
 
   <body>
-    
     <%= render "layouts/navbar" %>
-
+    <div class="container-fluid ">
+      <%= render "layouts/alert" %>
+    </div>
     <%= yield %>
-
     <%= render "layouts/footer" %>
   </body>
 </html>

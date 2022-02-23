@@ -1,56 +1,24 @@
-<%= form_with model: [ current_user, current_user.tasks.build ] do |form| %>
-  <div class="container">
-    <div class="col-md-12 col-12 col-sm-12">
-      <div class="card">
-        <div class="card-header">
-          <h4>Enter your task details.</h4>
+<%= form_with model: [ current_user, @task ] do |form| %>
+  <form class="mb-5">
+    <div class="container">
+      <div class="card-header">
+        <h4></h4>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Title</label>
+          <%= form.text_field 'title', class: 'form-control form-control-lg' %>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <tbody>
-                <tr>
-                  <th class="text-center">
-                  </th>
-                  <th>Task Name</th>
-                  <th>Description</th>
-                  <th>Start Date</th>
-                  <th>Close Date</th> 
-                </tr>
-                <tr>
-                  <td class="p-0 text-center">
-                  </td>
-                  <td class="col-3">
-                    <div class="form-outline mb-4">
-                      <%= form.text_field 'title', class: 'form-control form-control-lg', placeholder: 'Task Title' %>
-                    </div>
-                  </td>
-                  <td class="col-3">
-                    <div class="form-outline mb-4">
-                      <%= form.text_field 'description', class: 'form-control form-control-lg', placeholder: 'Enter Task Details' %>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="form-outline mb-4">
-                      <%= form.date_field 'started_at', class: 'form-control form-control-lg', placeholder: 'Starting Date' %>
-                    </div>
-                  </td>
-                  <td class="col-2">
-                    <div class="form-outline mb-4">
-                      <%= form.date_field 'close_at', class: 'form-control form-control-lg', placeholder: 'Closing Date' %>
-                    </div>
-                  </td>
-                  <td>
-                    <span data-toggle="tooltip" title="">
-                      <%= form.submit 'Save', class: "btn btn-primary btn-action mr-1" %>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="form-group col-md-6">
+          <label>Start Date</label>
+          <%= form.date_field :started_at, class: 'form-control form-control-lg' %>
         </div>
       </div>
+      <div class="form-group">
+        <label>Description</label>
+        <%= form.text_area 'description', class: 'form-control form-control-lg' %>
+      </div>
+      <%= form.submit 'Save', class: "btn btn-primary" %>
     </div>
-  </div>
+  </form>
 <% end %>
