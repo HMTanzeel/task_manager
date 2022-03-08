@@ -1,41 +1,41 @@
 <%= form_with model: @user do |form| %>
-<div class='container mb-5'>
-  <div class='row'>
-    <div class='col-md-8 order-md-1'>
-      <div class='row'>
-        <div class='col-md-6 mb-3'>
-          <label for='firstName'>Name*</label>
-          <%= form.text_field :name, class: 'form-control', type: 'name' %>
+  <div class='container mb-5'>
+    <div class='row'>
+      <div class='col-md-8 order-md-1'>
+        <div class='row'>
+          <div class='col-md-6 mb-3'>
+            <label for='firstName'>Name*</label>
+            <%= form.text_field :name, class: 'form-control', type: 'name' %>
+          </div>
+          <div class='col-md-6 mb-3'>
+            <label for='lastName'>Mobile Number*</label>
+            <%= form.telephone_field :mobile, class: 'form-control', type: 'mobile' %>
+          </div>
         </div>
-        <div class='col-md-6 mb-3'>
-          <label for='lastName'>Mobile Number*</label>
-          <%= form.telephone_field :mobile, class: 'form-control', type: 'mobile' %>
+        <div class='mb-3'>
+          <label for='email'>Email*</label>
+          <%= form.text_field :email, class: 'form-control', type: 'email' %>
         </div>
+        <div class='mb-3'>
+          <label for='email'>Password <span class='text-muted'>*</span></label>
+          <%= form.password_field :password, class: 'form-control', type: 'password' %>
+        </div>
+        <div class='mb-3'>
+          <label for='email'>Retype Password<span class='text-muted'>*</span></label>
+          <%= form.password_field :password, class: 'form-control', type: 'password' %>
+        </div>
+        <div class='mb-3'>
+          <label for='address'>Address</label>
+          <%= form.text_field :address, class: 'form-control', type: 'Address' %>
+        </div>
+        <hr class='mb-4'>
+        <%= form.submit 'Submit', class: 'btn btn-primary btn-lg btn-block' %>
+        <span class='small fw-bold mt-2 pt-1'>
+          Have an account? <%= link_to 'Login', new_session_path, class: 'link-danger' %>
+        </span>
       </div>
-      <div class='mb-3'>
-        <label for='email'>Email*</label>
-        <%= form.text_field :email, class: 'form-control', type: 'email' %>
-      </div>
-      <div class='mb-3'>
-        <label for='email'>Password <span class='text-muted'>*</span></label>
-        <%= form.password_field :password, class: 'form-control', type: 'password' %>
-      </div>
-      <div class='mb-3'>
-        <label for='email'>Retype Password<span class='text-muted'>*</span></label>
-        <%= form.password_field :password, class: 'form-control', type: 'password' %>
-      </div>
-      <div class='mb-3'>
-        <label for='address'>Address</label>
-        <%= form.text_field :address, class: 'form-control', type: 'Address' %>
-      </div>
-      <hr class='mb-4'>
-      <%= form.submit 'Submit', class: 'btn btn-primary btn-lg btn-block' %>
-      <span class='small fw-bold mt-2 pt-1'>
-        Have an account? <%= link_to 'Login', new_session_path, class: 'link-danger' %>
-      </span>
     </div>
   </div>
-</div>
 <% end %>
 
 
