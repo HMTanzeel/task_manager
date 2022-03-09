@@ -31,10 +31,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def list
-    
-  end
-
   def destroy
     if @project.destroy
       redirect_to user_projects_path, notice: 'Note has been deleted succesfully.'

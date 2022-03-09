@@ -7,3 +7,10 @@ development:
   database: task_manager_development
   username: postgres
   password: postgres
+
+test:
+  <<: *default
+  adapter: postgresql
+  database: task_manager_development
+  username: postgres
+  password: postgres

@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  discription: MyString
+  description: MyString
   user: one
   active: false
 
 two:
   title: MyString
-  discription: MyString
+  description: MyString
   user: two
   active: false
