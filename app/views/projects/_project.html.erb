@@ -1,13 +1,13 @@
 <div class='col-md-12 col-12 col-sm-12'>
   <div class='card'>
-    <h5 class='card-header'>Created at: <%= format_date(@project.created_at) %></h5>
+    <h5 class='card-header'>Created at: <%= formated_date(@project.created_at) %></h5>
     <div class='card-body'>
       <h5 class='card-title'><b>Title: </b> <%= @project.title %></h5>
       <p class='card-text'><b>Project: </b> <%= @project.description %></p>
       <p class='card-text'><b>Active: </b> <%= @project.active %></p>
       <p class='card-text'><b>Status: </b> <%= @project.project_type %></p>
-      <p class='card-text'><b>Start Date: </b> <%= format_date(@project.started_at) %></p>
-      <p class='card-text'><b>Close Date: </b> <%= format_date(@project.close_at) %></p>
+      <p class='card-text'><b>Start Date: </b> <%= formated_date(@project.started_at) %></p>
+      <p class='card-text'><b>Close Date: </b> <%= formated_date(@project.close_at) %></p>
       <%= link_to 'Edit', [:edit, current_user, @project], class: 'btn btn-success' %>
       <%= link_to 'Back', user_projects_path, class:'btn btn-primary' %>
       <%= link_to 'Delete', [current_user, @project], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>

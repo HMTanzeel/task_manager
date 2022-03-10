@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_project, only: [:show, :edit, :destroy, :update, :list]
+  before_action :find_project, except: [:index, :new, :create]
 
   def index
     @projects = current_user.projects
@@ -27,13 +27,13 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to user_project_path(current_user, @project)
     else
-      redirect_to edit_user_project_path, status: :unprocessable_entity
+      redirect_to edit_user_project_path, alert: @project.errors.full_messages.to_sentence
     end
   end
 
   def destroy
     if @project.destroy
-      redirect_to user_projects_path, notice: 'Note has been deleted succesfully.'
+      redirect_to user_projects_path, notice: 'Project has been deleted succesfully.'
     else
       redirect_to user_projects_path, alert: @project.errors.full_messages
     end

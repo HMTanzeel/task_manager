@@ -21,7 +21,7 @@
               
               <td><%= project.active %></td>
               <% if project.started_at.present? %>
-                <td><%= format_date(project.started_at) %></td>
+                <td><%= formated_date(project.started_at) %></td>
               <% end %>
               <td>
                 <%= link_to 'Edit', [:edit, current_user, project], class:'btn btn-success mb-1 btn-sm text-light' %>

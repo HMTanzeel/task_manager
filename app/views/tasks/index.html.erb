@@ -16,7 +16,7 @@
             <tr>
               <td><%= task.title %></td>
               <td><%= task.description.truncate(28) %></td>
-              <td><%= format_date(task.started_at) %></td>
+              <td><%= formated_date(task.started_at) %></td>
               <td>
                 <%= link_to 'Edit', [:edit, current_user, task], class:'btn btn-success mb-1 btn-sm text-light' %>
                 <br/>
