@@ -1,9 +1,6 @@
 require "test_helper"
 
 class ProjectTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   test "valid with user and if title is not empty" do
     project = Project.new(title: "any")
     assert_empty project.errors
