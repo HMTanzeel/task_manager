@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  active: false
+  started_at: 2022-03-11 12:03:27
+  close_at: 2022-03-11 12:03:27
+  project_type: 1
+  user: one
+
+two:
+  title: MyString
+  description: MyString
+  active: false
+  started_at: 2022-03-11 12:03:27
+  close_at: 2022-03-11 12:03:27
+  project_type: 1
+  user: two
