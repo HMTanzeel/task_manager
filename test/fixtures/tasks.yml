@@ -2,14 +2,14 @@
 
 one:
   title: MyString
-  discription: MyString
+  description: MyString
   started_at: 2022-02-10 11:09:21
   close_at: MyString
   user: one
 
 two:
   title: MyString
-  discription: MyString
+  description: MyString
   started_at: 2022-02-10 11:09:21
   close_at: MyString
   user: two

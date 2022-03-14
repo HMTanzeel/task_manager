@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :tasks
   validates :title, presence: true
   enum project_type: [:one_time, :support]
