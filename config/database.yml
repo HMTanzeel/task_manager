@@ -14,4 +14,3 @@ test:
   database: task_manager_test
   username: postgres
   password: postgres 
-  
