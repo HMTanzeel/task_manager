@@ -11,7 +11,6 @@ development:
 test:
   <<: *default
   adapter: postgresql
-  database: task_manager_development
+  database: task_manager_test
   username: postgres
   password: postgres 
-  
