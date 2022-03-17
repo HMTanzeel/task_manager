@@ -27,4 +27,13 @@ class ProjectTest < ActiveSupport::TestCase
 
     assert_empty project.errors
   end
+
+  test "find title of project" do
+    assert_equal "E-Commerece", projects(:one).title
+  end
+
+  test "find description of project" do
+    assert_equal "Home,About,Contact,Details", projects(:two).description
+  end
+  
 end
