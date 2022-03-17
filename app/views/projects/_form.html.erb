@@ -11,11 +11,11 @@
         </div>
         <div class='form-group col-md-6'>
           <div>
-            <%# <label>Status</label> %><br/>
+            <br/>
             <%= form.select(:project_type, project_type_options, {include_blank: "select status"}, class: 'form-control form-control-sm') %>
           </div>
           <div>
-            <%# <label>Active</label> %><br/>
+            <br/>
             <%= form.select :active, [['Active', true], ['Inactive', false]], {include_blank: "select active"}, class: 'form-control form-control-sm' %>
           </div>
         </div>
