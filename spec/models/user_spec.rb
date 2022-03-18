@@ -10,4 +10,9 @@ RSpec.describe User, type: :model do
     user1 = FactoryBot.create(:user)
     expect(user1.name).to eq('Tanzeel')
   end
+
+  it "valid if id is equal" do
+    user1 = FactoryBot.create(:user)
+    expect(user1.id).to eq(1)
+  end
 end
