@@ -13,8 +13,7 @@ RSpec.describe User, type: :model do
   end
 
   it "valid if name is available" do
-    user1 = create(:user)
-    expect(user1.name).to be_present
+    expect(create(:user).name).to be_present
   end
 
   it "valid if id is matched" do
