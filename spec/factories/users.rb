@@ -1,10 +1,9 @@
 FactoryBot.define do
   factory :user do
-    id { 1 }
-    name { 'Tanzeel' }
-    mobile { '1234' }
-    email { 'mtanzeel6633@gmail.com' }
-    password_digest { 'Password1234' }
-    address { 'Lahore, Pakistan' }
+    name { Faker::Name.first_name }
+    mobile { Faker::PhoneNumber.phone_number }
+    email { Faker::Internet.safe_email }
+    password_digest { Faker::Internet.password(min_length: 8) }
+    address { Faker::Address.country }
   end
 end
