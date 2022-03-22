@@ -1,0 +1,39 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <table class='table mb-5'>
+        <%= link_to 'Create Project', new_user_project_path, class:'btn btn-success mb-2 float-right text-light' %>
+        <thead class='bg-dark text-white'>
+          <tr>
+            <th scope='col'>Title</th>
+            <th scope='col'>Description</th>
+            <th scope='col'>Active</th>
+            <th scope='col'>Start Date</th>
+          </tr>
+        </thead>
+        <% @projects.each do |project| %>
+          <tbody>
+            <tr>
+              <td><%= project.title %></td>
+              <% if project.description.present? %>
+                <td><%= project.description.truncate(28) %></td>  
+              <% end %>
+              
+              <td><%= project.active %></td>
+              <% if project.started_at.present? %>
+                <td><%= formatted_date(project.started_at) %></td>
+              <% end %>
+              <td>
+                <%= link_to 'Edit', [:edit, current_user, project], class:'btn btn-success mb-1 btn-sm text-light' %>
+                <br/>
+                <%= link_to 'show', user_project_path(current_user, project), class:'btn btn-primary mb-1 btn-sm text-light' %>
+                <br/>
+                <%= link_to 'Delete', [current_user, project], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:'btn btn-danger mb-1 btn-sm text-light' %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>      
+</div>
