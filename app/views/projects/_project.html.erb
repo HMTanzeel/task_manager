@@ -3,9 +3,9 @@
     <h5 class='card-header'>Created at: <%= formatted_date(@project.created_at) %></h5>
     <div class='card-body'>
       <h5 class='card-title'><b>Title: </b> <%= @project.title %></h5>
-      <p class='card-text'><b>Project: </b> <%= @project.description %></p>
-      <p class='card-text'><b>Active: </b> <%= @project.active %></p>
-      <p class='card-text'><b>Status: </b> <%= @project.project_type %></p>
+      <p class='card-text'><b>Description: </b> <%= @project.description %></p>
+      <p class='card-text'><b>Status: </b> <%= @project.active %></p>
+      <p class='card-text'><b>Project Type: </b> <%= @project.project_type %></p>
       <p class='card-text'><b>Start Date: </b> <%= formatted_date(@project.started_at) %></p>
       <p class='card-text'><b>Close Date: </b> <%= formatted_date(@project.close_at) %></p>
       <%= link_to 'Edit', [:edit, current_user, @project], class: 'btn btn-success' %>
