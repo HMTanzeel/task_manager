@@ -1,0 +1,16 @@
+<div class='col-md-12 col-12 col-sm-12'>
+  <div class='card'>
+    <h5 class='card-header'>Registered at: <%= formatted_date(@client.created_at) %></h5>
+    <div class='card-body'>
+      <h5 class='card-title'><b>First Name: </b> <%= @client.first_name %></h5>
+      <p class='card-text'><b>Last Name: </b> <%= @client.last_name %></p>
+      <p class='card-text'><b>Website: </b> <%= @client.website %></p>
+      <p class='card-text'><b>Source: </b> <%= @client.source %></p>
+      <p class='card-text'><b>Email: </b> <%= @client.email %></p>
+      <p class='card-text'><b>Location: </b> <%= @client.location %></p>
+      <%= link_to 'Edit', [:edit, @client], class: 'btn btn-success' %>
+      <%= link_to 'Back', clients_path, class:'btn btn-primary' %>
+      <%= link_to 'Delete', @client, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>
