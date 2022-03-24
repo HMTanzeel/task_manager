@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :projects
   end
   resources :sessions, only: [:new, :create, :destroy]
-  
+  resources :clients  
 end
