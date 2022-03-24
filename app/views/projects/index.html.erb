@@ -20,11 +20,11 @@
               <td><%= project.active %></td>
               <td><%= formatted_date(project.started_at) if project.started_at.present? %></td>
               <td>
-                <%= link_to 'Edit', [:edit, current_user, project], class:'btn btn-success mb-1 btn-sm text-light' %>
-                <br/>
-                <%= link_to 'show', user_project_path(current_user, project), class:'btn btn-primary mb-1 btn-sm text-light' %>
-                <br/>
-                <%= link_to 'Delete', [current_user, project], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:'btn btn-danger mb-1 btn-sm text-light' %>
+                <div class="btn-group-vertical">
+                  <%= link_to 'Edit', [:edit, current_user, project], class:'btn btn-success mb-1 btn-sm text-light' %>
+                  <%= link_to 'show', user_project_path(current_user, project), class:'btn btn-primary mb-1 btn-sm text-light' %>
+                  <%= link_to 'Delete', [current_user, project], data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:'btn btn-danger mb-1 btn-sm text-light' %>
+                </div>
               </td>
             </tr>
           </tbody>
