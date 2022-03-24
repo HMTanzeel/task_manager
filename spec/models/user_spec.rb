@@ -16,9 +16,7 @@ RSpec.describe User, type: :model do
     expect(create(:user).name).to be_present
   end
 
-  it "valid if id is matched" do
-    user1 = create(:user)
-    uid = user1.id
-    expect(user1.id).to eq(uid)
+  it "valid if email is available" do
+    expect(create(:user).email).to be_present
   end
 end
