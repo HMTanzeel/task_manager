@@ -10,9 +10,9 @@ RSpec.describe Project, type: :model do
   it { should have_db_column(:close_at).of_type(:datetime) }
   it { should belong_to(:user) }
 
-  it "valid if title is available" do
+  it "not valid if title is not available" do
     user = create(:user)
-    project = create(:project, user: user)
-    expect(project.title).present?
+    client = create(:client)
+    expect(create(:project, title: nil, user: user, client: client).title).to be_present
   end
 end
