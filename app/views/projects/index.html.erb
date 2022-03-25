@@ -18,7 +18,7 @@
               <td><%= project.title %></td>
               <td><%= project.description.truncate(28) if project.description.present? %></td>
               <td><%= project.active %></td>
-                <td><%= formatted_date(project.started_at) if project.started_at.present? %></td>
+              <td><%= formatted_date(project.started_at) if project.started_at.present? %></td>
               <td>
                 <%= link_to 'Edit', [:edit, current_user, project], class:'btn btn-success mb-1 btn-sm text-light' %>
                 <br/>
